@@ -72,7 +72,7 @@ namespace ProjectA
         {
             lblContact.Text = "";
             char chr1 = e.KeyChar;
-            if (!char.IsDigit(chr1) && chr1 != 8)
+            if (char.IsLetter(chr1) && chr1 != 8)
             {
                 e.Handled = true;
                 lblContact.Text = "Numeric Value Only!";
@@ -99,6 +99,9 @@ namespace ProjectA
 
         private void btn_Register_Click(object sender, EventArgs e)
         {
+            bool found;
+            string et= txt_Email.Text;
+            string ct = txt_Contact.Text;
             if (sqlCon.State == ConnectionState.Closed)
 
                 try
@@ -135,7 +138,7 @@ namespace ProjectA
                         {
                             lblContact.Text = "Contact is required!";
                         }
-                        if (txt_Email.Text == "")
+                       if (txt_Email.Text == "")
                         {
                             lblEmail.Text = "Email is required!";
                         }
@@ -147,9 +150,36 @@ namespace ProjectA
                         {
                             lblRegistrationNo.Text = "RegistrationNo. is required!";
                         }
+                        if (et.EndsWith("@gmail.com") == false )
+                        {
+                            lblEmail.Text = "Valid Email is required!";
+                        }
+                        if (txt_Email.TextLength<11)
+                        {
+                            lblEmail.Text = "Valid Email is required!";
+                        }
+                        if (txt_Contact.TextLength != 16)
+                        {
+                            lblContact.Text = "Valid Contact is required!";
+                        }
+                        if (ct.StartsWith("+92-")==false)
+                        {
+                            lblContact.Text = "Valid Contact is required!";
+                        }
                     }
-                    if (txt_FirstName.Text != "" && txt_LastName.Text != "" && txt_Contact.Text != ""
-                       && txt_Email.Text != "" && cmb_gender.Text != "" && txt_RegisterationNo.Text != "" && count == 0)
+                    if (txt_FirstName.Text != "" && txt_LastName.Text != ""  &&txt_Email.TextLength>11
+                        && cmb_gender.Text != "" && txt_RegisterationNo.Text != "" && count == 0 
+                       && et.EndsWith("@gmail.com") == true &&txt_Contact.TextLength==16&& ct.StartsWith("+92-") == true)
+                    {
+                        found = true;
+                     
+
+                    }
+                    else
+                    {
+                        found = false;
+                    }
+                    if(found==true)
                     {
                         SqlCommand sqlCmd = new SqlCommand("INSERT INTO Person(FirstName,LastName,Contact,Email,DateOfBirth,Gender) VALUES('" + txt_FirstName.Text + "','" + txt_LastName.Text + "','" + txt_Contact.Text + "','" + txt_Email.Text + "' ,'" + Convert.ToDateTime(dateTimePicker1.Value) + "',(SELECT Id From Lookup WHERE  Value = '" + cmb_gender.Text + "')) ", sqlCon);
 
@@ -160,12 +190,10 @@ namespace ProjectA
                         SqlCommand sqlCmd2 = new SqlCommand("INSERT INTO Student(Id,RegistrationNo) Values('" + id + "','" + txt_RegisterationNo.Text + "')", sqlCon);
                         sqlCmd2.ExecuteNonQuery();
                         MessageBox.Show("Added Successfully");
-
-
-
+                        Clear();
                     }
                     sqlCon.Close();
-                    Clear();
+                   
 
                 }
                 catch (Exception ex)

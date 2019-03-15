@@ -210,6 +210,9 @@ namespace ProjectA
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
+            bool found;
+            string et = textBox5.Text;
+            string ct = textBox4.Text;
             if (sqlCon.State == ConnectionState.Closed)
                 try
                 {
@@ -218,7 +221,7 @@ namespace ProjectA
                     SqlCommand sqlCmd = new SqlCommand("SELECT COUNT(Student.Id) FROM Student  WHERE  RegistrationNo='" + textBox6.Text + "' AND Id!='"+textBox1.Text+"'", sqlCon);
                     int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
 
-                    if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == ""
+                    if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == ""&&textBox5.Text==""
                         && textBox4.Text == "" && comboBox1.Text == "" && textBox6.Text == "")
                     {
                         lblFirstName.Text = "FirstName is required!";
@@ -258,10 +261,36 @@ namespace ProjectA
                         {
                             lblRegistrationNo.Text = "RegistrationNo. is required!";
                         }
+                        if (et.EndsWith("@gmail.com") == false)
+                        {
+                            lblEmail.Text = "Valid Email is required!";
+                        }
+                        if (textBox5.TextLength < 11)
+                        {
+                            lblEmail.Text = "Valid Email is required!";
+                        }
+                        if (textBox4.TextLength != 16)
+                        {
+                            lblContact.Text = "Valid Contact is required!";
+                        }
+                        if (ct.StartsWith("+92-")==false)
+                        {
+                            lblContact.Text = "Valid Contact is required!";
+                        }
                     }
                    
-                    if (textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != ""
-                       && textBox5.Text != "" && comboBox1.Text != "" && textBox6.Text != "" && count==0)
+                    if (textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != ""&& et.EndsWith("@gmail.com") == true && textBox4.TextLength == 16&& ct.StartsWith("+92-") == true
+                       && textBox5.Text != "" && comboBox1.Text != "" && textBox6.Text != "" && count==0 && textBox5.TextLength > 11)
+                        {
+                            found = true;
+
+
+                        }
+                    else
+                    {
+                            found = false;
+                        }
+                    if (found == true)
                     {
 
                         SqlCommand sqlCmd1 = new SqlCommand("SELECT Id FROM  Lookup WHERE Value= '" + comboBox1.Text + "'", sqlCon);
@@ -290,12 +319,12 @@ namespace ProjectA
 
                         MessageBox.Show("Information has been Edited");
                         Clear();
-                       
+
                         btnDelete.Enabled = false;
                         btn_Edit.Enabled = false;
-                       
+
                     }
-                        sqlCon.Close();
+                    sqlCon.Close();
                     dataGridView1.DataSource = null;
                     FillGridView();
 
@@ -443,7 +472,7 @@ namespace ProjectA
         {
             lblContact.Text = "";
             char chr1 = e.KeyChar;
-            if (!char.IsDigit(chr1) && chr1 != 8)
+            if (char.IsLetter(chr1) && chr1 != 8)
             {
                 e.Handled = true;
                 lblContact.Text = "Numeric Value Only!";
