@@ -25,17 +25,15 @@ namespace ProjectA
 
         private void Register_Load(object sender, EventArgs e)
         {
+           
 
-            //label2.Visible = false;
-            //label3.Visible = false;
-            lblFirstName.Text =  "*";
-            lblRegistrationNo.Text = "*";
-            lblEmail.Text = "*";
+
         }
+       
         public void Clear()
         {
             
-           txt_FirstName.Text = txt_LastName.Text = txt_Contact.Text=txt_Email.Text=cmb_gender.SelectedText=txt_RegisterationNo.Text="";
+           txt_FirstName.Text = txt_LastName.Text = txt_Contact.Text=txt_Email.Text=cmb_gender.Text=txt_RegisterationNo.Text="";
            
 
         }
@@ -73,7 +71,13 @@ namespace ProjectA
         private void txt_Contact_KeyPress(object sender, KeyPressEventArgs e)
         {
             lblContact.Text = "";
-              
+            char chr1 = e.KeyChar;
+            if (!char.IsDigit(chr1) && chr1 != 8)
+            {
+                e.Handled = true;
+                lblContact.Text = "Numeric Value Only!";
+            }
+
         }
 
         private void txt_Email_KeyPress(object sender, KeyPressEventArgs e)
@@ -97,69 +101,77 @@ namespace ProjectA
         {
             if (sqlCon.State == ConnectionState.Closed)
 
-                sqlCon.Open();
-            SqlCommand sqlCmd3 = new SqlCommand("SELECT COUNT(Student.Id) FROM Student  WHERE  RegistrationNo='"+txt_RegisterationNo.Text+"'", sqlCon);
-           int count = Convert.ToInt32(sqlCmd3.ExecuteScalar());
-           
-            if(txt_FirstName.Text == ""&& txt_LastName.Text == ""&& txt_Contact.Text == ""
-                && txt_Email.Text == ""&& cmb_gender.Text == ""&&txt_RegisterationNo.Text=="")
-            {
-                lblFirstName.Text = "FirstName is required!";
-                lblLastName.Text = "LastName is required!";
-                lblContact.Text = "Contact is required!";
-                lblEmail.Text = "Email is required!";
-                lblGender.Text = "Gender is required!";
-                lblRegistrationNo.Text = "RegistrationNo. is required!";
-            }
-            else if (count > 0)
-            {
-                lblRegistrationNo.Text = "RegistrationNumber Already Exist!";
-            }
-            else
-            {
-                 if (txt_FirstName.Text == "")
+                try
                 {
-                    lblFirstName.Text = "FirstName is required!";
-                }
-                if (txt_LastName.Text == "")
-                {
-                    lblLastName.Text = "LastName is required!";
-                }
-                if (txt_Contact.Text == "")
-                {
-                    lblContact.Text = "Contact is required!";
-                }
-                if (txt_Email.Text == "")
-                {
-                    lblEmail.Text = "Email is required!";
-                }
-                if (cmb_gender.Text == "" && cmb_gender.Text != "Male" && cmb_gender.Text != "Female")
-                {
-                    lblGender.Text = "Gender is required!";
-                }
-                if (txt_RegisterationNo.Text == "")
-                {
-                    lblRegistrationNo.Text = "RegistrationNo. is required!";
-                }
-            }
-            if (txt_FirstName.Text != "" && txt_LastName.Text != "" && txt_Contact.Text != ""
-               && txt_Email.Text != "" && cmb_gender.Text != "" && txt_RegisterationNo.Text != ""&&count==0)
-            {
-                SqlCommand sqlCmd = new SqlCommand("INSERT INTO Person(FirstName,LastName,Contact,Email,DateOfBirth,Gender) VALUES('" + txt_FirstName.Text + "','" + txt_LastName.Text + "','" + txt_Contact.Text + "','" + txt_Email.Text + "' ,'" + Convert.ToDateTime(dateTimePicker1.Value) + "',(SELECT Id From Lookup WHERE  Value = '" + cmb_gender.Text + "')) ", sqlCon);
+                    sqlCon.Open();
+                    SqlCommand sqlCmd3 = new SqlCommand("SELECT COUNT(Student.Id) FROM Student  WHERE  RegistrationNo='" + txt_RegisterationNo.Text + "'", sqlCon);
+                    int count = Convert.ToInt32(sqlCmd3.ExecuteScalar());
 
-                sqlCmd.ExecuteNonQuery();
+                    if (txt_FirstName.Text == "" && txt_LastName.Text == "" && txt_Contact.Text == ""
+                        && txt_Email.Text == "" && cmb_gender.Text == "" && txt_RegisterationNo.Text == "")
+                    {
+                        lblFirstName.Text = "FirstName is required!";
+                        lblLastName.Text = "LastName is required!";
+                        lblContact.Text = "Contact is required!";
+                        lblEmail.Text = "Email is required!";
+                        lblGender.Text = "Gender is required!";
+                        lblRegistrationNo.Text = "RegistrationNo. is required!";
+                    }
+                    else if (count > 0)
+                    {
+                        lblRegistrationNo.Text = "RegistrationNumber Already Exist!";
+                    }
+                    else
+                    {
+                        if (txt_FirstName.Text == "")
+                        {
+                            lblFirstName.Text = "FirstName is required!";
+                        }
+                        if (txt_LastName.Text == "")
+                        {
+                            lblLastName.Text = "LastName is required!";
+                        }
+                        if (txt_Contact.Text == "")
+                        {
+                            lblContact.Text = "Contact is required!";
+                        }
+                        if (txt_Email.Text == "")
+                        {
+                            lblEmail.Text = "Email is required!";
+                        }
+                        if (cmb_gender.Text == "" && cmb_gender.Text != "Male" && cmb_gender.Text != "Female")
+                        {
+                            lblGender.Text = "Gender is required!";
+                        }
+                        if (txt_RegisterationNo.Text == "")
+                        {
+                            lblRegistrationNo.Text = "RegistrationNo. is required!";
+                        }
+                    }
+                    if (txt_FirstName.Text != "" && txt_LastName.Text != "" && txt_Contact.Text != ""
+                       && txt_Email.Text != "" && cmb_gender.Text != "" && txt_RegisterationNo.Text != "" && count == 0)
+                    {
+                        SqlCommand sqlCmd = new SqlCommand("INSERT INTO Person(FirstName,LastName,Contact,Email,DateOfBirth,Gender) VALUES('" + txt_FirstName.Text + "','" + txt_LastName.Text + "','" + txt_Contact.Text + "','" + txt_Email.Text + "' ,'" + Convert.ToDateTime(dateTimePicker1.Value) + "',(SELECT Id From Lookup WHERE  Value = '" + cmb_gender.Text + "')) ", sqlCon);
 
-                SqlCommand sqlCmd1 = new SqlCommand("SELECT IDENT_CURRENT('Person') ", sqlCon);
-                int id = Convert.ToInt32(sqlCmd1.ExecuteScalar());
-                SqlCommand sqlCmd2 = new SqlCommand("INSERT INTO Student(Id,RegistrationNo) Values('" + id + "','" + txt_RegisterationNo.Text + "')", sqlCon);
-                MessageBox.Show("Added Successfully");
-                sqlCmd2.ExecuteNonQuery();
-                sqlCon.Close();
+                        sqlCmd.ExecuteNonQuery();
 
-                Clear();
-                
+                        SqlCommand sqlCmd1 = new SqlCommand("SELECT IDENT_CURRENT('Person') ", sqlCon);
+                        int id = Convert.ToInt32(sqlCmd1.ExecuteScalar());
+                        SqlCommand sqlCmd2 = new SqlCommand("INSERT INTO Student(Id,RegistrationNo) Values('" + id + "','" + txt_RegisterationNo.Text + "')", sqlCon);
+                        sqlCmd2.ExecuteNonQuery();
+                        MessageBox.Show("Added Successfully");
 
-            }
+
+
+                    }
+                    sqlCon.Close();
+                    Clear();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
 
 
 

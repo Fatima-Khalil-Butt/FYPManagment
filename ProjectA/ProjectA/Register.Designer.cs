@@ -40,7 +40,6 @@
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.txt_LastName = new System.Windows.Forms.TextBox();
             this.txt_FirstName = new System.Windows.Forms.TextBox();
-            this.cmb_gender = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -55,6 +54,7 @@
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.cmb_gender = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -163,19 +163,6 @@
             this.txt_FirstName.TabIndex = 18;
             this.txt_FirstName.TextChanged += new System.EventHandler(this.txt_FirstName_TextChanged);
             this.txt_FirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_FirstName_KeyPress);
-            // 
-            // cmb_gender
-            // 
-            this.cmb_gender.FormattingEnabled = true;
-            this.cmb_gender.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.cmb_gender.Location = new System.Drawing.Point(533, 393);
-            this.cmb_gender.Name = "cmb_gender";
-            this.cmb_gender.Size = new System.Drawing.Size(323, 28);
-            this.cmb_gender.TabIndex = 35;
-            this.cmb_gender.SelectedValueChanged += new System.EventHandler(this.cmb_gender_SelectedValueChanged);
-            this.cmb_gender.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_gender_KeyPress);
             // 
             // dateTimePicker1
             // 
@@ -310,11 +297,25 @@
             this.linkLabel2.Text = "Home";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
+            // cmb_gender
+            // 
+            this.cmb_gender.FormattingEnabled = true;
+            this.cmb_gender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cmb_gender.Location = new System.Drawing.Point(533, 392);
+            this.cmb_gender.Name = "cmb_gender";
+            this.cmb_gender.Size = new System.Drawing.Size(323, 28);
+            this.cmb_gender.TabIndex = 49;
+            this.cmb_gender.SelectedIndexChanged += new System.EventHandler(this.cmb_gender_SelectedValueChanged);
+            this.cmb_gender.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_gender_KeyPress);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1129, 720);
+            this.Controls.Add(this.cmb_gender);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblContact);
             this.Controls.Add(this.lblLastName);
@@ -323,7 +324,6 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.cmb_gender);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_Register);
             this.Controls.Add(this.label7);
@@ -339,7 +339,7 @@
             this.Controls.Add(this.txt_LastName);
             this.Controls.Add(this.txt_FirstName);
             this.Name = "Register";
-            this.Text = "s";
+            this.Text = "Register";
             this.Load += new System.EventHandler(this.Register_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -361,7 +361,6 @@
         private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.TextBox txt_LastName;
         private System.Windows.Forms.TextBox txt_FirstName;
-        private System.Windows.Forms.ComboBox cmb_gender;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblEmail;
@@ -376,5 +375,6 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.LinkLabel linkLabel4;
+        private System.Windows.Forms.ComboBox cmb_gender;
     }
 }

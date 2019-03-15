@@ -58,6 +58,12 @@
     <Compile Include="AssignAdvior.Designer.cs">
       <DependentUpon>AssignAdvior.cs</DependentUpon>
     </Compile>
+    <Compile Include="AvailableAdvisors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AvailableAdvisors.Designer.cs">
+      <DependentUpon>AvailableAdvisors.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateGroup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AssignAdvior.resx">
       <DependentUpon>AssignAdvior.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AvailableAdvisors.resx">
+      <DependentUpon>AvailableAdvisors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateGroup.resx">
       <DependentUpon>CreateGroup.cs</DependentUpon>
