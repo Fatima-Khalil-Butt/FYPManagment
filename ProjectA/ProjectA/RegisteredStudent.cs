@@ -134,40 +134,49 @@ namespace ProjectA
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            int index = e.RowIndex;
-            DataGridViewRow selectedRow = dataGridView1.Rows[index];
-            rowNo = index;
-            if (e.ColumnIndex == 8 && e.RowIndex == index)
+
+            try
             {
-                textBox1.Text = selectedRow.Cells[0].Value.ToString();
-                textBox2.Text = selectedRow.Cells[1].Value.ToString();
-                textBox3.Text = selectedRow.Cells[2].Value.ToString();
-                textBox4.Text = selectedRow.Cells[3].Value.ToString();
-                textBox5.Text = selectedRow.Cells[4].Value.ToString();
-                
-               dateTimePicker1.Value = DateTime.Parse(selectedRow.Cells[5].Value.ToString());
-           
-                comboBox1.Text = selectedRow.Cells[6].Value.ToString();
-                textBox6.Text = selectedRow.Cells[7].Value.ToString();
+                int index = e.RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[index];
+                rowNo = index;
+                if (e.ColumnIndex == 8 && e.RowIndex == index)
+                {
+                    textBox1.Text = selectedRow.Cells[0].Value.ToString();
+                    textBox2.Text = selectedRow.Cells[1].Value.ToString();
+                    textBox3.Text = selectedRow.Cells[2].Value.ToString();
+                    textBox4.Text = selectedRow.Cells[3].Value.ToString();
+                    textBox5.Text = selectedRow.Cells[4].Value.ToString();
 
-                lblFirstName.Text = "*";
-                lblLastName.Text = "*";
-                lblContact.Text = "*";
-                lblEmail.Text = "*";
-                lblGender.Text = "*";
-                lblRegistrationNo.Text = "*";
+                    dateTimePicker1.Value = DateTime.Parse(selectedRow.Cells[5].Value.ToString());
 
-                btn_Edit.Enabled = true;
-                btnDelete.Enabled = true;
+                    comboBox1.Text = selectedRow.Cells[6].Value.ToString();
+                    textBox6.Text = selectedRow.Cells[7].Value.ToString();
+
+                    lblFirstName.Text = "*";
+                    lblLastName.Text = "*";
+                    lblContact.Text = "*";
+                    lblEmail.Text = "*";
+                    lblGender.Text = "*";
+                    lblRegistrationNo.Text = "*";
+
+                    btn_Edit.Enabled = true;
+                    btnDelete.Enabled = true;
+
+                }
 
             }
-          
-         
-            
-               
-              
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
+
+
+
+
 
         }
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)

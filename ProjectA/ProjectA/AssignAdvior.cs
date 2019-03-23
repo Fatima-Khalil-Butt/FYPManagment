@@ -21,7 +21,7 @@ namespace ProjectA
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAssign_Click(object sender, EventArgs e)
         {
             if (sqlCon.State == ConnectionState.Closed)
 
@@ -178,7 +178,9 @@ namespace ProjectA
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-           
+            AssignedAdvisors aa = new AssignedAdvisors();
+            this.Hide();
+            aa.Show();
         }
 
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -213,6 +215,11 @@ namespace ProjectA
         private void comboBox3_SelectedValueChanged(object sender, EventArgs e)
         {
             lblAR.Text = "";
+        }
+
+        private void AssignAdvior_KeyDown(object sender, KeyEventArgs e)
+        {
+            
         }
     }
 }

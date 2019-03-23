@@ -227,23 +227,30 @@ namespace ProjectA
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            DataGridViewRow selectedRow = dataGridView1.Rows[index];
-            //   rowNo = index;
-            if (e.ColumnIndex == 4 && e.RowIndex == index)
+            try
             {
-                textBox1.Text = selectedRow.Cells[0].Value.ToString();
-                 txtName.Text = selectedRow.Cells[1].Value.ToString();
-                txtmarks.Text = selectedRow.Cells[2].Value.ToString();
-                txtWeightage.Text = selectedRow.Cells[3].Value.ToString();
+                int index = e.RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[index];
+                //   rowNo = index;
+                if (e.ColumnIndex == 4 && e.RowIndex == index)
+                {
+                    textBox1.Text = selectedRow.Cells[0].Value.ToString();
+                    txtName.Text = selectedRow.Cells[1].Value.ToString();
+                    txtmarks.Text = selectedRow.Cells[2].Value.ToString();
+                    txtWeightage.Text = selectedRow.Cells[3].Value.ToString();
 
 
-                lblName.Text = "*";
-                lblTotalMarks.Text = "*";
-                lblTotalWeight.Text = "*";
-                btnEdit.Enabled = true;
-                btnDelete.Enabled = true;
-               btnAdd.Enabled = false;
+                    lblName.Text = "*";
+                    lblTotalMarks.Text = "*";
+                    lblTotalWeight.Text = "*";
+                    btnEdit.Enabled = true;
+                    btnDelete.Enabled = true;
+                    btnAdd.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -324,6 +331,21 @@ namespace ProjectA
         private void txtName_KeyPress(object sender, KeyPressEventArgs e)
         {
             lblName.Text = "";
+        }
+
+        private void panel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTotalMarks_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

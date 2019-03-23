@@ -60,7 +60,7 @@ namespace ProjectA
 
         private void txt_Username_KeyPress(object sender, KeyPressEventArgs e)
         {
-            lblUserName.Text = "";
+           lblUserName.Text = "";
             char chr = e.KeyChar;
             if (char.IsDigit(chr) && chr != 8)
             {

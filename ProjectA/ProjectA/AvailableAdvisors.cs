@@ -117,23 +117,32 @@ namespace ProjectA
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            DataGridViewRow selectedRow = dataGridView1.Rows[index];
-            //   rowNo = index;
-            if (e.ColumnIndex == 3 && e.RowIndex == index)
+            try
             {
-                textBox1.Text = selectedRow.Cells[0].Value.ToString();
-                textBox2.Text = selectedRow.Cells[1].Value.ToString();
-                textBox3.Text = selectedRow.Cells[2].Value.ToString();
+                int index = e.RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[index];
+                //   rowNo = index;
+                if (e.ColumnIndex == 3 && e.RowIndex == index)
+                {
+                    textBox1.Text = selectedRow.Cells[0].Value.ToString();
+                    textBox2.Text = selectedRow.Cells[1].Value.ToString();
+                    textBox3.Text = selectedRow.Cells[2].Value.ToString();
 
 
-                lblDesignation.Text = "*";
-                lblSalary.Text = "*";
-                btnEdit.Enabled = true;
-                btnDelete.Enabled = true;
-                textBox2.ReadOnly = true;
-                
+                    lblDesignation.Text = "*";
+                    lblSalary.Text = "*";
+                    btnEdit.Enabled = true;
+                    btnDelete.Enabled = true;
+                    textBox2.ReadOnly = true;
+
+
+                }
             }
+             catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
         private void btnEdit_Click(object sender, EventArgs e)
         {

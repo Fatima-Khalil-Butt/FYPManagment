@@ -113,6 +113,7 @@ namespace ProjectA
                     if (txt_FirstName.Text == "" && txt_LastName.Text == "" && txt_Contact.Text == ""
                         && txt_Email.Text == "" && cmb_gender.Text == "" && txt_RegisterationNo.Text == "")
                     {
+                        
                         lblFirstName.Text = "FirstName is required!";
                         lblLastName.Text = "LastName is required!";
                         lblContact.Text = "Contact is required!";
@@ -250,11 +251,6 @@ namespace ProjectA
             
             lblGender.Text = "";
            
-        }
-
-        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

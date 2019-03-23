@@ -35,3 +35,4 @@ C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.Cor
 C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.exe
 C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.pdb
 C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.AvailableAdvisors.resources
+C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.AssignedAdvisors.resources

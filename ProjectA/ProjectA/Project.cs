@@ -92,7 +92,7 @@ namespace ProjectA
                 }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnnAdd_Click(object sender, EventArgs e)
         {
             if (sqlCon.State == ConnectionState.Closed)
                 try
@@ -103,12 +103,12 @@ namespace ProjectA
                     if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "")
                     {
                         lblDescription.Text = "Description is required!";
-                        lbltitle.Text = "Title is required!";
+                        lblTitle.Text = "Title is required!";
 
                     }
                     else if(count>0)
                     {
-                        lbltitle.Text = "Already Exist!";
+                        lblTitle.Text = "Already Exist!";
                     }
 
                     else
@@ -119,7 +119,7 @@ namespace ProjectA
                         }
                         if (textBox2.Text == "")
                         {
-                            lbltitle.Text = "Title is required!";
+                            lblTitle.Text = "Title is required!";
                         }
 
                     }
@@ -166,12 +166,12 @@ namespace ProjectA
                     if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "")
                     {
                         lblDescription.Text = "Description is required!";
-                        lbltitle.Text = "Title is required!";
+                          lblTitle.Text = "Title is required!";
 
                     }
                     else if(count1>0)
                     {
-                        lbltitle.Text = "Already required!";
+                        lblTitle.Text = "Already required!";
                     }
 
                     else
@@ -182,7 +182,7 @@ namespace ProjectA
                         }
                         if (textBox2.Text == "")
                         {
-                            lbltitle.Text = "Title is required!";
+                            lblTitle.Text = "Title is required!";
                         }
 
                     }
@@ -205,7 +205,7 @@ namespace ProjectA
                         Clear();
                         btnDelete.Enabled = false;
                         btnEdit.Enabled = false;
-                        button1.Enabled = true;
+                        btnnAdd.Enabled = true;
                         
                         
                     }
@@ -223,21 +223,28 @@ namespace ProjectA
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            DataGridViewRow selectedRow = dataGridView1.Rows[index];
-            //   rowNo = index;
-            if (e.ColumnIndex == 3 && e.RowIndex == index)
+            try
             {
-                textBox3.Text = selectedRow.Cells[0].Value.ToString();
-                textBox1.Text = selectedRow.Cells[1].Value.ToString();
-                textBox2.Text = selectedRow.Cells[2].Value.ToString();
+                int index = e.RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[index];
+                //   rowNo = index;
+                if (e.ColumnIndex == 3 && e.RowIndex == index)
+                {
+                    textBox3.Text = selectedRow.Cells[0].Value.ToString();
+                    textBox1.Text = selectedRow.Cells[1].Value.ToString();
+                    textBox2.Text = selectedRow.Cells[2].Value.ToString();
 
 
-                lbltitle.Text = "*";
-                lblDescription.Text = "*";
-                btnEdit.Enabled = true;
-                btnDelete.Enabled = true;
-                button1.Enabled = false;
+                    lblTitle.Text = "*";
+                    lblDescription.Text = "*";
+                    btnEdit.Enabled = true;
+                    btnDelete.Enabled = true;
+                    btnnAdd.Enabled = false;
+                }
+            }
+             catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -260,7 +267,7 @@ namespace ProjectA
                     Clear();
                     btnDelete.Enabled = false;
                     btnEdit.Enabled = false;
-                    button1.Enabled = true;
+                    btnnAdd.Enabled = true;
 
                     sqlCon.Close();
 
@@ -302,7 +309,9 @@ namespace ProjectA
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            lbltitle.Text = "";
+            lblTitle.Text = "";
         }
+
+      
     }
 }
