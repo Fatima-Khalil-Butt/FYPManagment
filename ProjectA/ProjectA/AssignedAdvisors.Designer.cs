@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -45,11 +46,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblProject = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblAdvisor = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -63,6 +62,8 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel13.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -113,6 +114,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1924, 927);
             this.panel1.TabIndex = 6;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel15
             // 
@@ -129,6 +131,14 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
@@ -136,6 +146,7 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1563, 219);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel2
             // 
@@ -155,7 +166,7 @@
             this.panel5.Controls.Add(this.lbl);
             this.panel5.Controls.Add(this.dateTimePicker1);
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(10, 319);
+            this.panel5.Location = new System.Drawing.Point(242, 351);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(863, 90);
             this.panel5.TabIndex = 73;
@@ -194,7 +205,7 @@
             this.panel4.Controls.Add(this.comboBox3);
             this.panel4.Controls.Add(this.lblAR);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(10, 223);
+            this.panel4.Location = new System.Drawing.Point(242, 255);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(863, 90);
             this.panel4.TabIndex = 72;
@@ -203,7 +214,7 @@
             // 
             this.comboBox3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(233, 18);
+            this.comboBox3.Location = new System.Drawing.Point(233, 22);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(316, 28);
             this.comboBox3.TabIndex = 64;
@@ -211,7 +222,7 @@
             // lblAR
             // 
             this.lblAR.AutoSize = true;
-            this.lblAR.Location = new System.Drawing.Point(555, 18);
+            this.lblAR.Location = new System.Drawing.Point(555, 22);
             this.lblAR.Name = "lblAR";
             this.lblAR.Size = new System.Drawing.Size(15, 20);
             this.lblAR.TabIndex = 63;
@@ -230,10 +241,10 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel3.Controls.Add(this.textBox2);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.lblProject);
-            this.panel3.Controls.Add(this.comboBox2);
-            this.panel3.Location = new System.Drawing.Point(10, 127);
+            this.panel3.Location = new System.Drawing.Point(242, 159);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(863, 90);
             this.panel3.TabIndex = 71;
@@ -257,22 +268,13 @@
             this.lblProject.TabIndex = 56;
             this.lblProject.Text = "*";
             // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(233, 12);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(316, 28);
-            this.comboBox2.TabIndex = 60;
-            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel7.Controls.Add(this.textBox1);
             this.panel7.Controls.Add(this.label1);
             this.panel7.Controls.Add(this.lblAdvisor);
-            this.panel7.Controls.Add(this.comboBox1);
-            this.panel7.Location = new System.Drawing.Point(10, 31);
+            this.panel7.Location = new System.Drawing.Point(242, 63);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(863, 90);
             this.panel7.TabIndex = 70;
@@ -290,20 +292,11 @@
             // lblAdvisor
             // 
             this.lblAdvisor.AutoSize = true;
-            this.lblAdvisor.Location = new System.Drawing.Point(555, 16);
+            this.lblAdvisor.Location = new System.Drawing.Point(555, 18);
             this.lblAdvisor.Name = "lblAdvisor";
             this.lblAdvisor.Size = new System.Drawing.Size(15, 20);
             this.lblAdvisor.TabIndex = 58;
             this.lblAdvisor.Text = "*";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(233, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(316, 28);
-            this.comboBox1.TabIndex = 59;
             // 
             // panel6
             // 
@@ -319,23 +312,25 @@
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(437, 3);
+            this.btnDelete.Location = new System.Drawing.Point(682, 3);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(168, 50);
             this.btnDelete.TabIndex = 65;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(163, 3);
+            this.btnEdit.Location = new System.Drawing.Point(408, 3);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(168, 50);
             this.btnEdit.TabIndex = 64;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // panel8
             // 
@@ -370,6 +365,7 @@
             this.linkLabel4.TabIndex = 3;
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "AssignedAdvisors";
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
             // 
             // panel11
             // 
@@ -393,6 +389,7 @@
             this.linkLabel3.TabIndex = 2;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "AssignAdvisor";
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
             // panel9
             // 
@@ -417,6 +414,7 @@
             this.linkLabel2.TabIndex = 1;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "FYPManagment";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // panel12
             // 
@@ -441,6 +439,7 @@
             this.linkLabel1.TabIndex = 0;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Home";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // panel14
             // 
@@ -450,6 +449,22 @@
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(1924, 10);
             this.panel14.TabIndex = 7;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBox1.Location = new System.Drawing.Point(233, 18);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(316, 26);
+            this.textBox1.TabIndex = 59;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBox2.Location = new System.Drawing.Point(233, 12);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(316, 26);
+            this.textBox2.TabIndex = 60;
             // 
             // AssignedAdvisors
             // 
@@ -461,6 +476,7 @@
             this.Controls.Add(this.panel13);
             this.Name = "AssignedAdvisors";
             this.Text = "AssignedAdvisors";
+            this.Load += new System.EventHandler(this.AssignedAdvisors_Load);
             this.panel13.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
@@ -505,11 +521,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblProject;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblAdvisor;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Panel panel8;
@@ -525,5 +539,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

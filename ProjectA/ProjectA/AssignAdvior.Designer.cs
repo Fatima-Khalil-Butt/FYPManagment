@@ -100,7 +100,7 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.lblProject);
             this.panel3.Controls.Add(this.comboBox2);
-            this.panel3.Location = new System.Drawing.Point(10, 127);
+            this.panel3.Location = new System.Drawing.Point(231, 170);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(863, 90);
             this.panel3.TabIndex = 71;
@@ -157,7 +157,7 @@
             this.panel4.Controls.Add(this.comboBox3);
             this.panel4.Controls.Add(this.lblAR);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(10, 223);
+            this.panel4.Location = new System.Drawing.Point(231, 266);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(863, 90);
             this.panel4.TabIndex = 72;
@@ -178,7 +178,7 @@
             this.panel5.Controls.Add(this.lbl);
             this.panel5.Controls.Add(this.dateTimePicker1);
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(10, 319);
+            this.panel5.Location = new System.Drawing.Point(231, 362);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(863, 90);
             this.panel5.TabIndex = 73;
@@ -229,7 +229,7 @@
             this.panel7.Controls.Add(this.label1);
             this.panel7.Controls.Add(this.lblAdvisor);
             this.panel7.Controls.Add(this.comboBox1);
-            this.panel7.Location = new System.Drawing.Point(10, 31);
+            this.panel7.Location = new System.Drawing.Point(231, 74);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(863, 90);
             this.panel7.TabIndex = 70;
@@ -259,16 +259,16 @@
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel6.Controls.Add(this.btnAssign);
-            this.panel6.Location = new System.Drawing.Point(343, 601);
+            this.panel6.Location = new System.Drawing.Point(343, 618);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1536, 113);
+            this.panel6.Size = new System.Drawing.Size(1536, 109);
             this.panel6.TabIndex = 74;
             // 
             // btnAssign
             // 
             this.btnAssign.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAssign.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAssign.Location = new System.Drawing.Point(353, 14);
+            this.btnAssign.Location = new System.Drawing.Point(496, 18);
             this.btnAssign.Name = "btnAssign";
             this.btnAssign.Size = new System.Drawing.Size(178, 58);
             this.btnAssign.TabIndex = 64;

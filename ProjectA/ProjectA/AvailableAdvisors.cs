@@ -252,5 +252,10 @@ namespace ProjectA
             this.Hide();
             ava.Show();
         }
+
+        private void panel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

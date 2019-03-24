@@ -28,39 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtWeightage = new System.Windows.Forms.TextBox();
             this.lblTotalWeight = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtmarks = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTotalMarks = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtmarks = new System.Windows.Forms.TextBox();
-            this.txtWeightage = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel13.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -69,9 +73,6 @@
             this.panel11.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel12.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel13
@@ -109,6 +110,92 @@
             this.panel1.Size = new System.Drawing.Size(1924, 927);
             this.panel1.TabIndex = 6;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.dataGridView1);
+            this.panel5.Location = new System.Drawing.Point(344, 544);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1568, 344);
+            this.panel5.TabIndex = 79;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Location = new System.Drawing.Point(4, 4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(1561, 319);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel6.Controls.Add(this.btnAdd);
+            this.panel6.Controls.Add(this.btnDelete);
+            this.panel6.Controls.Add(this.btnEdit);
+            this.panel6.Location = new System.Drawing.Point(343, 461);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1569, 60);
+            this.panel6.TabIndex = 78;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(348, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(168, 50);
+            this.btnAdd.TabIndex = 66;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(890, 3);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(168, 50);
+            this.btnDelete.TabIndex = 65;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(630, 3);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(168, 50);
+            this.btnEdit.TabIndex = 64;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(586, 39);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(316, 26);
+            this.textBox1.TabIndex = 76;
+            // 
             // panel2
             // 
             this.panel2.AutoScrollMargin = new System.Drawing.Size(1148, 661);
@@ -127,10 +214,19 @@
             this.panel4.Controls.Add(this.txtWeightage);
             this.panel4.Controls.Add(this.lblTotalWeight);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(15, 207);
+            this.panel4.Location = new System.Drawing.Point(243, 217);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(863, 90);
             this.panel4.TabIndex = 72;
+            // 
+            // txtWeightage
+            // 
+            this.txtWeightage.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtWeightage.Location = new System.Drawing.Point(233, 24);
+            this.txtWeightage.Name = "txtWeightage";
+            this.txtWeightage.Size = new System.Drawing.Size(316, 26);
+            this.txtWeightage.TabIndex = 78;
+            this.txtWeightage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWeightage_KeyPress);
             // 
             // lblTotalWeight
             // 
@@ -157,10 +253,19 @@
             this.panel3.Controls.Add(this.txtmarks);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.lblTotalMarks);
-            this.panel3.Location = new System.Drawing.Point(15, 111);
+            this.panel3.Location = new System.Drawing.Point(243, 121);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(863, 90);
             this.panel3.TabIndex = 71;
+            // 
+            // txtmarks
+            // 
+            this.txtmarks.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtmarks.Location = new System.Drawing.Point(233, 16);
+            this.txtmarks.Name = "txtmarks";
+            this.txtmarks.Size = new System.Drawing.Size(316, 26);
+            this.txtmarks.TabIndex = 78;
+            this.txtmarks.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmarks_KeyPress);
             // 
             // label2
             // 
@@ -188,10 +293,19 @@
             this.panel7.Controls.Add(this.txtName);
             this.panel7.Controls.Add(this.label1);
             this.panel7.Controls.Add(this.lblName);
-            this.panel7.Location = new System.Drawing.Point(15, 15);
+            this.panel7.Location = new System.Drawing.Point(243, 25);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(863, 90);
             this.panel7.TabIndex = 70;
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtName.Location = new System.Drawing.Point(233, 22);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(316, 26);
+            this.txtName.TabIndex = 77;
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
             // label1
             // 
@@ -222,40 +336,6 @@
             this.panel8.Size = new System.Drawing.Size(321, 806);
             this.panel8.TabIndex = 72;
             this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(586, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(316, 26);
-            this.textBox1.TabIndex = 76;
-            // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtName.Location = new System.Drawing.Point(233, 22);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(316, 26);
-            this.txtName.TabIndex = 77;
-            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
-            // 
-            // txtmarks
-            // 
-            this.txtmarks.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtmarks.Location = new System.Drawing.Point(233, 16);
-            this.txtmarks.Name = "txtmarks";
-            this.txtmarks.Size = new System.Drawing.Size(316, 26);
-            this.txtmarks.TabIndex = 78;
-            this.txtmarks.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmarks_KeyPress);
-            // 
-            // txtWeightage
-            // 
-            this.txtWeightage.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtWeightage.Location = new System.Drawing.Point(233, 24);
-            this.txtWeightage.Name = "txtWeightage";
-            this.txtWeightage.Size = new System.Drawing.Size(316, 26);
-            this.txtWeightage.TabIndex = 78;
-            this.txtWeightage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWeightage_KeyPress);
             // 
             // panel11
             // 
@@ -331,61 +411,6 @@
             this.linkLabel1.Text = "Home";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel6.Controls.Add(this.btnAdd);
-            this.panel6.Controls.Add(this.btnDelete);
-            this.panel6.Controls.Add(this.btnEdit);
-            this.panel6.Location = new System.Drawing.Point(343, 461);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1569, 60);
-            this.panel6.TabIndex = 78;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(118, 3);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(168, 50);
-            this.btnAdd.TabIndex = 66;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(660, 3);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(168, 50);
-            this.btnDelete.TabIndex = 65;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(400, 3);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(168, 50);
-            this.btnEdit.TabIndex = 64;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.dataGridView1);
-            this.panel5.Location = new System.Drawing.Point(344, 544);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1568, 344);
-            this.panel5.TabIndex = 79;
-            // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -394,22 +419,6 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(1924, 13);
             this.panel10.TabIndex = 7;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1561, 331);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Evaluation
             // 
@@ -425,6 +434,9 @@
             this.panel13.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -439,9 +451,6 @@
             this.panel9.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

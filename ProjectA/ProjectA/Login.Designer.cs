@@ -119,7 +119,7 @@
             this.panel3.Controls.Add(this.txt_password);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.lblPassword);
-            this.panel3.Location = new System.Drawing.Point(122, 211);
+            this.panel3.Location = new System.Drawing.Point(270, 211);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(863, 152);
             this.panel3.TabIndex = 71;
@@ -157,7 +157,7 @@
             this.panel7.Controls.Add(this.txt_Username);
             this.panel7.Controls.Add(this.label1);
             this.panel7.Controls.Add(this.lblUserName);
-            this.panel7.Location = new System.Drawing.Point(122, 31);
+            this.panel7.Location = new System.Drawing.Point(270, 31);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(863, 110);
             this.panel7.TabIndex = 70;
