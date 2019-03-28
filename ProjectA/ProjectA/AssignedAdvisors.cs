@@ -43,7 +43,7 @@ namespace ProjectA
                 {
                     sqlCon.Open();
                    
-                    SqlDataAdapter sqlDa = new SqlDataAdapter(" SELECT L1.Value AS Advisor,L2.Title AS ProjectTitle ,L3.Value AS AdviorRole,ProjectAdvisor.AssignmentDate AS AssignmentDate FROM((( ProjectAdvisor INNER JOIN Lookup AS L1 ON  ProjectAdvisor.AdvisorId=L1.Id)INNER JOIN  Project  AS L2 ON ProjectAdvisor.ProjectId=L2.Id)INNER JOIN Lookup AS L3 ON ProjectAdvisor.AdvisorRole=L3.Id )", sqlCon);
+                    SqlDataAdapter sqlDa = new SqlDataAdapter(" SELECT L1.Value AS Advisor,L2.Title AS ProjectTitle ,L3.Value AS AdviorRole,ProjectAdvisor.AssignmentDate AS AssignmentDate FROM((( ProjectAdvisor INNER JOIN Lookup AS L1 ON  ProjectAdvisor.AdvisorId=L1.Id)INNER JOIN  Project  AS L2 ON ProjectAdvisor.ProjectId=L2.Id)INNER JOIN Lookup AS L3 ON ProjectAdvisor.AdvisorRole=L3.Id ) ORDER BY L2.Title", sqlCon);
 
                     DataTable dtbl = new DataTable();
                     sqlDa.Fill(dtbl);
@@ -113,7 +113,7 @@ namespace ProjectA
         {
 
 
-            using (SqlDataAdapter sda1 = new SqlDataAdapter("SELECT Lookup.Value FROM Lookup WHERE Category='ADVISOR_ROLE'", sqlCon))
+            using (SqlDataAdapter sda1 = new SqlDataAdapter("SELECT Lookup.Value FROM Lookup WHERE Category='ADVISOR_ROLE' ORDER BY Value", sqlCon))
             {
                 DataTable dt1 = new DataTable();
                 sda1.Fill(dt1);
@@ -230,7 +230,39 @@ namespace ProjectA
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (sqlCon.State == ConnectionState.Closed)
+                try
+                {
+                    sqlCon.Open();
+                    SqlCommand sqlCmd = new SqlCommand("SELECT Id FROM  Lookup WHERE Value= '" + textBox1.Text + "'", sqlCon);
+                    int id = Convert.ToInt32(sqlCmd.ExecuteScalar());
+                    SqlCommand sqlCmd1 = new SqlCommand("SELECT Id FROM  Lookup WHERE Value= '" + comboBox3.Text + "'", sqlCon);
+                    int id1 = Convert.ToInt32(sqlCmd1.ExecuteScalar());
+                    SqlCommand sqlCmd2 = new SqlCommand("SELECT Id FROM  Project WHERE  Title= '" + textBox2.Text + "'", sqlCon);
+                    int id2 = Convert.ToInt32(sqlCmd2.ExecuteScalar());
+                    SqlCommand sqlCmd3 = new SqlCommand("DELETE FROM ProjectAdvisor WHERE AdvisorId='"+id+"'AND ProjectId='"+id2+ "' AND AdvisorRole='" + id1 + "'", sqlCon);
+                   
+                    
+                    sqlCmd3.ExecuteNonQuery();
 
+                    
+
+                    MessageBox.Show("Information has been Deleted");
+                    Clear();
+                    btnDelete.Enabled = false;
+                    btnEdit.Enabled = false;
+
+
+
+                    sqlCon.Close();
+                    dataGridView1.DataSource = null;
+
+                    FillGridView();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -270,6 +302,18 @@ namespace ProjectA
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void comboBox3_SelectedValueChanged(object sender, EventArgs e)
+        {
+            lblAR.Text = "";
+
+        }
+
+        private void comboBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            lblAR.Text = "Please Select from List!";
         }
     }
 }

@@ -112,7 +112,7 @@ namespace ProjectA
                 try
                 {
                     sqlCon.Open();
-                    SqlDataAdapter sqlDa = new SqlDataAdapter(" SELECT Evaluation.Id,Evaluation.Name, Evaluation.TotalMarks,Evaluation.TotalWeightage FROM Evaluation", sqlCon);
+                    SqlDataAdapter sqlDa = new SqlDataAdapter(" SELECT Evaluation.Id,Evaluation.Name, Evaluation.TotalMarks,Evaluation.TotalWeightage FROM Evaluation ORDER BY Name", sqlCon);
                     DataTable dtbl = new DataTable();
                     sqlDa.Fill(dtbl);
                     foreach (DataRow item in dtbl.Rows)
@@ -344,6 +344,16 @@ namespace ProjectA
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

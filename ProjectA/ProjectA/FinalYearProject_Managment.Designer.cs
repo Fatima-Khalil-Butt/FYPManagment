@@ -34,6 +34,12 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -89,7 +95,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(657, 495);
+            this.linkLabel1.Location = new System.Drawing.Point(677, 527);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(62, 20);
             this.linkLabel1.TabIndex = 11;
@@ -97,11 +103,77 @@
             this.linkLabel1.Text = "LogOut";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(468, 30);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(204, 51);
+            this.button6.TabIndex = 12;
+            this.button6.Text = "Group";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(468, 125);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(204, 57);
+            this.button7.TabIndex = 13;
+            this.button7.Text = "GroupStudent";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(468, 208);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(204, 53);
+            this.button8.TabIndex = 14;
+            this.button8.Text = "GroupEvaluation";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(468, 301);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(204, 56);
+            this.button9.TabIndex = 15;
+            this.button9.Text = "GroupProject";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(77, 468);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(199, 56);
+            this.button10.TabIndex = 16;
+            this.button10.Text = "StudentReport";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(468, 401);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(204, 56);
+            this.button11.TabIndex = 17;
+            this.button11.Text = "EvaluationReport";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // FinalYearProject_Managment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 569);
+            this.Controls.Add(this.button11);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -123,5 +195,11 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
     }
 }

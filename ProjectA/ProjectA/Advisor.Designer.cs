@@ -32,10 +32,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblSalary = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.lblDesignation = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -46,15 +53,9 @@
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lblDesignation = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblSalary = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel13.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -63,7 +64,6 @@
             this.panel11.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel12.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel13
@@ -108,6 +108,34 @@
             this.panel1.Size = new System.Drawing.Size(1924, 917);
             this.panel1.TabIndex = 11;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel6.Controls.Add(this.button1);
+            this.panel6.Location = new System.Drawing.Point(343, 601);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1535, 62);
+            this.panel6.TabIndex = 79;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(453, 7);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(168, 50);
+            this.button1.TabIndex = 66;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(818, 53);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(316, 26);
+            this.textBox2.TabIndex = 77;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -129,6 +157,24 @@
             this.panel3.Size = new System.Drawing.Size(863, 114);
             this.panel3.TabIndex = 71;
             // 
+            // lblSalary
+            // 
+            this.lblSalary.AutoSize = true;
+            this.lblSalary.Location = new System.Drawing.Point(555, 15);
+            this.lblSalary.Name = "lblSalary";
+            this.lblSalary.Size = new System.Drawing.Size(15, 20);
+            this.lblSalary.TabIndex = 51;
+            this.lblSalary.Text = "*";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBox1.Location = new System.Drawing.Point(235, 15);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(314, 26);
+            this.textBox1.TabIndex = 50;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -149,6 +195,32 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(863, 104);
             this.panel7.TabIndex = 70;
+            // 
+            // lblDesignation
+            // 
+            this.lblDesignation.AutoSize = true;
+            this.lblDesignation.Location = new System.Drawing.Point(555, 21);
+            this.lblDesignation.Name = "lblDesignation";
+            this.lblDesignation.Size = new System.Drawing.Size(15, 20);
+            this.lblDesignation.TabIndex = 59;
+            this.lblDesignation.Text = "*";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Professor",
+            "Associate Professor",
+            "Assisstant Professor",
+            "Lecturer",
+            "Industry Professional"});
+            this.comboBox1.Location = new System.Drawing.Point(233, 21);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(316, 28);
+            this.comboBox1.TabIndex = 58;
+            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
+            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // label1
             // 
@@ -269,78 +341,6 @@
             this.linkLabel1.Text = "Home";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(818, 53);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(316, 26);
-            this.textBox2.TabIndex = 77;
-            // 
-            // lblDesignation
-            // 
-            this.lblDesignation.AutoSize = true;
-            this.lblDesignation.Location = new System.Drawing.Point(555, 21);
-            this.lblDesignation.Name = "lblDesignation";
-            this.lblDesignation.Size = new System.Drawing.Size(15, 20);
-            this.lblDesignation.TabIndex = 59;
-            this.lblDesignation.Text = "*";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Professor",
-            "Associate Professor",
-            "Assisstant Professor",
-            "Lecturer",
-            "Industry Professional"});
-            this.comboBox1.Location = new System.Drawing.Point(233, 21);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(316, 28);
-            this.comboBox1.TabIndex = 58;
-            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
-            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
-            // 
-            // lblSalary
-            // 
-            this.lblSalary.AutoSize = true;
-            this.lblSalary.Location = new System.Drawing.Point(555, 15);
-            this.lblSalary.Name = "lblSalary";
-            this.lblSalary.Size = new System.Drawing.Size(15, 20);
-            this.lblSalary.TabIndex = 51;
-            this.lblSalary.Text = "*";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox1.Location = new System.Drawing.Point(235, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(314, 26);
-            this.textBox1.TabIndex = 50;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel6.Controls.Add(this.button1);
-            this.panel6.Location = new System.Drawing.Point(343, 601);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1535, 62);
-            this.panel6.TabIndex = 79;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(453, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 50);
-            this.button1.TabIndex = 66;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Advisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -355,6 +355,7 @@
             this.panel13.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -369,7 +370,6 @@
             this.panel9.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

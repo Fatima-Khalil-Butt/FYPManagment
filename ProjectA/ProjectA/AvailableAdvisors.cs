@@ -52,7 +52,7 @@ namespace ProjectA
                 try
                 {
                     sqlCon.Open();
-                    SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT Advisor.Id,Lookup.Value,Advisor.Salary FROM Advisor INNER JOIN Lookup ON Advisor.Designation=Lookup.Id", sqlCon);
+                    SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT Advisor.Id,Lookup.Value,Advisor.Salary FROM Advisor INNER JOIN Lookup ON Advisor.Designation=Lookup.Id ORDER BY Value", sqlCon);
                     DataTable dtbl = new DataTable();
                     sqlDa.Fill(dtbl);
                     foreach (DataRow item in dtbl.Rows)

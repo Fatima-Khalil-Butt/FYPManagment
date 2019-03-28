@@ -20,7 +20,10 @@ namespace ProjectA
         {
             InitializeComponent();
         }
-
+        void Clear()
+        {
+            comboBox1.Text = comboBox2.Text = comboBox3.Text = "";
+        }
         private void btnAssign_Click(object sender, EventArgs e)
         {
             if (sqlCon.State == ConnectionState.Closed)
@@ -68,13 +71,15 @@ namespace ProjectA
                             " (SELECT Id From Project WHERE  Title ='" + comboBox2.Text + "')," +
                             "(SELECT Id From Lookup WHERE  Lookup.Value ='" + comboBox3.Text + "')," +
                             "'" + Convert.ToDateTime(dateTimePicker1.Text) + "')", sqlCon);
-
+                        Clear();
                         sqlCmd.ExecuteNonQuery();
-
+                        
                         MessageBox.Show("Advisor has been Assigned");
 
                   }
                     sqlCon.Close();
+
+                   
                      }
                      catch (Exception ex)
                      {
@@ -89,7 +94,7 @@ namespace ProjectA
         {
 
 
-            using (SqlDataAdapter sda = new SqlDataAdapter("SELECT Value  FROM Lookup INNER JOIN Advisor ON Lookup.Id=Advisor.Id" , sqlCon))
+            using (SqlDataAdapter sda = new SqlDataAdapter("SELECT Value  FROM Lookup INNER JOIN Advisor ON Lookup.Id=Advisor.Id ORDER BY Value" , sqlCon))
             {
 
                 DataTable dt = new DataTable();
@@ -125,7 +130,7 @@ namespace ProjectA
         {
 
 
-            using (SqlDataAdapter sda1 = new SqlDataAdapter("SELECT Lookup.Value FROM Lookup WHERE Category='ADVISOR_ROLE'", sqlCon))
+            using (SqlDataAdapter sda1 = new SqlDataAdapter("SELECT Lookup.Value FROM Lookup WHERE Category='ADVISOR_ROLE' ORDER BY Value", sqlCon))
             {
                 DataTable dt1 = new DataTable();
                 sda1.Fill(dt1);
@@ -204,6 +209,7 @@ namespace ProjectA
         private void comboBox2_SelectedValueChanged(object sender, EventArgs e)
         {
             lblProject.Text = "";
+            lblAdvisor.Text = "";
         }
         private void comboBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -220,6 +226,26 @@ namespace ProjectA
         private void AssignAdvior_KeyDown(object sender, KeyEventArgs e)
         {
             
+        }
+
+        private void btnAssign_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnAssign_BindingContextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

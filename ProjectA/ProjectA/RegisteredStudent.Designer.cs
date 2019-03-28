@@ -117,6 +117,7 @@
             this.label5.Size = new System.Drawing.Size(1858, 69);
             this.label5.TabIndex = 0;
             this.label5.Text = "RegisteredStudents";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // panel14
             // 

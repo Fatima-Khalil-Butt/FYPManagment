@@ -93,6 +93,8 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(316, 28);
             this.comboBox1.TabIndex = 59;
+            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
+            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // panel3
             // 
@@ -132,6 +134,9 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(316, 28);
             this.comboBox2.TabIndex = 60;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged_1);
+            this.comboBox2.SelectedValueChanged += new System.EventHandler(this.comboBox2_SelectedValueChanged);
+            this.comboBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox2_KeyPress);
             // 
             // comboBox3
             // 
@@ -141,6 +146,8 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(316, 28);
             this.comboBox3.TabIndex = 64;
+            this.comboBox3.SelectedValueChanged += new System.EventHandler(this.comboBox3_SelectedValueChanged);
+            this.comboBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox3_KeyPress);
             // 
             // lblAR
             // 
@@ -254,6 +261,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1891, 841);
             this.panel1.TabIndex = 5;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel6
             // 
@@ -274,6 +282,8 @@
             this.btnAssign.TabIndex = 64;
             this.btnAssign.Text = "Assign";
             this.btnAssign.UseVisualStyleBackColor = false;
+            this.btnAssign.BindingContextChanged += new System.EventHandler(this.btnAssign_BindingContextChanged);
+            this.btnAssign.TextChanged += new System.EventHandler(this.btnAssign_TextChanged);
             this.btnAssign.Click += new System.EventHandler(this.btnAssign_Click);
             // 
             // panel8

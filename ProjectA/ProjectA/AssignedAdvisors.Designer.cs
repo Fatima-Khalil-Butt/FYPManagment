@@ -44,9 +44,11 @@
             this.lblAR = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblProject = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblAdvisor = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -62,8 +64,6 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel13.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -218,6 +218,8 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(316, 28);
             this.comboBox3.TabIndex = 64;
+            this.comboBox3.SelectedValueChanged += new System.EventHandler(this.comboBox3_SelectedValueChanged);
+            this.comboBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox3_KeyPress);
             // 
             // lblAR
             // 
@@ -249,6 +251,14 @@
             this.panel3.Size = new System.Drawing.Size(863, 90);
             this.panel3.TabIndex = 71;
             // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBox2.Location = new System.Drawing.Point(233, 12);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(316, 26);
+            this.textBox2.TabIndex = 60;
+            // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -278,6 +288,14 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(863, 90);
             this.panel7.TabIndex = 70;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBox1.Location = new System.Drawing.Point(233, 18);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(316, 26);
+            this.textBox1.TabIndex = 59;
             // 
             // label1
             // 
@@ -449,22 +467,6 @@
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(1924, 10);
             this.panel14.TabIndex = 7;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox1.Location = new System.Drawing.Point(233, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(316, 26);
-            this.textBox1.TabIndex = 59;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox2.Location = new System.Drawing.Point(233, 12);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(316, 26);
-            this.textBox2.TabIndex = 60;
             // 
             // AssignedAdvisors
             // 

@@ -51,7 +51,7 @@ namespace ProjectA
                     SqlDataAdapter sqlDa = new SqlDataAdapter(" SELECT Person.Id,Person.FirstName," +
                         "Person.LastName,Person.Contact,Person.Email,Person.DateOfBirth,Lookup.Value," +
                         "Student.RegistrationNo FROM (( Person INNER JOIN  Lookup ON  Lookup.Id=Person.Gender ) " +
-                        "INNER JOIN  Student ON Person.Id=Student.Id)", sqlCon);
+                        "INNER JOIN  Student ON Person.Id=Student.Id) ORDER BY Student.RegistrationNo", sqlCon);
                     DataTable dtbl = new DataTable();
                     sqlDa.Fill(dtbl);
                     foreach (DataRow item in dtbl.Rows)
@@ -135,42 +135,7 @@ namespace ProjectA
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            try
-            {
-                int index = e.RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[index];
-                rowNo = index;
-                if (e.ColumnIndex == 8 && e.RowIndex == index)
-                {
-                    textBox1.Text = selectedRow.Cells[0].Value.ToString();
-                    textBox2.Text = selectedRow.Cells[1].Value.ToString();
-                    textBox3.Text = selectedRow.Cells[2].Value.ToString();
-                    textBox4.Text = selectedRow.Cells[3].Value.ToString();
-                    textBox5.Text = selectedRow.Cells[4].Value.ToString();
-
-                    dateTimePicker1.Value = DateTime.Parse(selectedRow.Cells[5].Value.ToString());
-
-                    comboBox1.Text = selectedRow.Cells[6].Value.ToString();
-                    textBox6.Text = selectedRow.Cells[7].Value.ToString();
-
-                    lblFirstName.Text = "*";
-                    lblLastName.Text = "*";
-                    lblContact.Text = "*";
-                    lblEmail.Text = "*";
-                    lblGender.Text = "*";
-                    lblRegistrationNo.Text = "*";
-
-                    btn_Edit.Enabled = true;
-                    btnDelete.Enabled = true;
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+           
 
 
 
@@ -207,10 +172,45 @@ namespace ProjectA
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            try
+            {
+                int index = e.RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[index];
+                rowNo = index;
+                if (e.ColumnIndex == 8 && e.RowIndex == index)
+                {
+                    textBox1.Text = selectedRow.Cells[0].Value.ToString();
+                    textBox2.Text = selectedRow.Cells[1].Value.ToString();
+                    textBox3.Text = selectedRow.Cells[2].Value.ToString();
+                    textBox4.Text = selectedRow.Cells[3].Value.ToString();
+                    textBox5.Text = selectedRow.Cells[4].Value.ToString();
+
+                    dateTimePicker1.Value = DateTime.Parse(selectedRow.Cells[5].Value.ToString());
+
+                    comboBox1.Text = selectedRow.Cells[6].Value.ToString();
+                    textBox6.Text = selectedRow.Cells[7].Value.ToString();
+
+                    lblFirstName.Text = "*";
+                    lblLastName.Text = "*";
+                    lblContact.Text = "*";
+                    lblEmail.Text = "*";
+                    lblGender.Text = "*";
+                    lblRegistrationNo.Text = "*";
+
+                    btn_Edit.Enabled = true;
+                    btnDelete.Enabled = true;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
-        
+
 
         private void RegisteredStudent_Click(object sender, EventArgs e)
         {
@@ -278,7 +278,7 @@ namespace ProjectA
                         {
                             lblEmail.Text = "Valid Email is required!";
                         }
-                        if (textBox4.TextLength != 16)
+                        if (textBox4.TextLength != 14)
                         {
                             lblContact.Text = "Valid Contact is required!";
                         }
@@ -288,7 +288,7 @@ namespace ProjectA
                         }
                     }
                    
-                    if (textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != ""&& et.EndsWith("@gmail.com") == true && textBox4.TextLength == 16&& ct.StartsWith("+92-") == true
+                    if (textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != ""&& et.EndsWith("@gmail.com") == true && textBox4.TextLength == 14&& ct.StartsWith("+92-") == true
                        && textBox5.Text != "" && comboBox1.Text != "" && textBox6.Text != "" && count==0 && textBox5.TextLength > 11)
                         {
                             found = true;
@@ -319,7 +319,10 @@ namespace ProjectA
 
 
                         sqlCmd2.ExecuteNonQuery();
-
+                        SqlCommand sqlCmd4 = new SqlCommand("UPDATE GroupStudent SET StudentId=@Id WHERE  StudentId=@Id", sqlCon);
+                       
+                        sqlCmd4.Parameters.Add("@Id", SqlDbType.VarChar).Value = Convert.ToInt32(textBox1.Text);
+                        sqlCmd4.ExecuteNonQuery();
 
                         SqlCommand sqlCmd3 = new SqlCommand("UPDATE Student SET RegistrationNo=@RegistrationNo WHERE Student.Id=@Id", sqlCon);
                         sqlCmd3.Parameters.Add("@RegistrationNo", SqlDbType.VarChar).Value = textBox6.Text;
@@ -367,6 +370,8 @@ namespace ProjectA
 
             try
             {
+                SqlCommand sqlCmd= new SqlCommand("DELETE FROM GroupStudent WHERE StudentId= '" + Convert.ToInt32(textBox1.Text) + "'", sqlCon);
+                sqlCmd.ExecuteNonQuery();
                 SqlCommand sqlCmd1 = new SqlCommand("DELETE FROM Student WHERE Id= '" + Convert.ToInt32(textBox1.Text) + "'", sqlCon);
                 sqlCmd1.ExecuteNonQuery();
                 string query1 = "DELETE FROM Person WHERE Id='" + Convert.ToInt32(textBox1.Text) + "'";
@@ -508,6 +513,11 @@ namespace ProjectA
         private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
         {
             lblRegistrationNo.Text = "";
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }

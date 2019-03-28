@@ -19,6 +19,7 @@ namespace ProjectA
         public Register()
         {
             InitializeComponent();
+            lblEmail.Text = "*";
             
 
         }
@@ -159,7 +160,7 @@ namespace ProjectA
                         {
                             lblEmail.Text = "Valid Email is required!";
                         }
-                        if (txt_Contact.TextLength != 16)
+                        if (txt_Contact.TextLength != 14)
                         {
                             lblContact.Text = "Valid Contact is required!";
                         }
@@ -170,7 +171,7 @@ namespace ProjectA
                     }
                     if (txt_FirstName.Text != "" && txt_LastName.Text != ""  &&txt_Email.TextLength>11
                         && cmb_gender.Text != "" && txt_RegisterationNo.Text != "" && count == 0 
-                       && et.EndsWith("@gmail.com") == true &&txt_Contact.TextLength==16&& ct.StartsWith("+92-") == true)
+                       && et.EndsWith("@gmail.com") == true &&txt_Contact.TextLength==14 && ct.StartsWith("+92-") == true)
                     {
                         found = true;
                      
@@ -278,6 +279,11 @@ namespace ProjectA
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel13_Paint(object sender, PaintEventArgs e)
         {
 
         }
