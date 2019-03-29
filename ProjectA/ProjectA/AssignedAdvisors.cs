@@ -208,7 +208,7 @@ namespace ProjectA
                         sqlCmd6.ExecuteNonQuery();
                         Clear();
 
-
+                       
 
                         MessageBox.Show("Information has been Updated!");
 
@@ -216,6 +216,7 @@ namespace ProjectA
                     sqlCon.Close();
                     dataGridView1.DataSource = null;
                     FillGridView();
+
 
                 }
                 catch (Exception ex)
@@ -252,12 +253,12 @@ namespace ProjectA
                     btnDelete.Enabled = false;
                     btnEdit.Enabled = false;
 
-
-
+                   
                     sqlCon.Close();
                     dataGridView1.DataSource = null;
-
                     FillGridView();
+
+
                 }
                 catch (Exception ex)
                 {

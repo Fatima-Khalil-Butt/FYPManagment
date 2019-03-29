@@ -232,13 +232,13 @@ namespace ProjectA
                         MessageBox.Show("Updated");
 
                         Clear();
-
+                        
+                        FillComboBox1();
 
                     }
                     sqlCon.Close();
                     dataGridView1.DataSource = null;
                     FillGridView();
-                    FillComboBox1();
                 }
                 catch (Exception ex)
                 {
@@ -267,13 +267,14 @@ namespace ProjectA
                     btnDelete.Enabled = false;
                     btnEdit.Enabled = false;
 
-
+                    FillComboBox1();
 
                     sqlCon.Close();
+
                     dataGridView1.DataSource = null;
 
                     FillGridView();
-                    FillComboBox1();
+
                 }
                 catch (Exception ex)
                 {

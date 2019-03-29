@@ -195,6 +195,7 @@ namespace ProjectA
                     sqlCon.Close();
                     dataGridView1.DataSource = null;
                     FillGridView();
+
                 }
                 catch (Exception ex)
                 {
@@ -232,13 +233,14 @@ namespace ProjectA
                     Clear();
                     btnDelete.Enabled = false;
                     btnEdit.Enabled = false;
+                    
 
 
-                   
                     sqlCon.Close();
                     dataGridView1.DataSource = null;
 
                     FillGridView();
+
                 }
                 catch (Exception ex)
                 {

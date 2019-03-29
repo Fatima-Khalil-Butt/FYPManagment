@@ -126,14 +126,9 @@ namespace ProjectA
                     sqlCon.Open();
 
 
-
-
-
-
-
                     SqlCommand sqlCmd14 = new SqlCommand("SELECT COUNT(GroupId) FROM GroupProject WHERE GroupId='" + Convert.ToInt32(comboBox1.Text) + "'", sqlCon);
                     int countId = Convert.ToInt32(sqlCmd14.ExecuteScalar());
-
+                   
 
                     if (comboBox1.Text == "" && comboBox3.Text == "" )
                     {
@@ -148,6 +143,7 @@ namespace ProjectA
                     {
                         MessageBox.Show("Project has been Already  Assigned to this group...choose Another Group!");
                     }
+                   
                     else
                     {
                         if (comboBox1.Text == "")
@@ -172,13 +168,13 @@ namespace ProjectA
                         sqlCmd5.ExecuteNonQuery();
                         MessageBox.Show("Project Added to Group");
                         Clear();
-                       
+                        FillComboBox1();
 
-                       
+
                     }
                     sqlCon.Close();  
 
-                    FillComboBox1();
+                   
                 }
                 catch (Exception ex)
                 {

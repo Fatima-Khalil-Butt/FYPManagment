@@ -120,7 +120,7 @@ namespace ProjectA
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CreateGroup cg = new CreateGroup();
+           GroupStudent cg = new GroupStudent();
             this.Hide();
             cg.Show();
         }
@@ -183,9 +183,11 @@ namespace ProjectA
                 sqlCon.Close();
                     dataGridView1.DataSource = null;
                     FillGridView();
-                   
+
+
+
                 }
-            catch (Exception ex)
+                catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -264,12 +266,13 @@ namespace ProjectA
                     btnDelete.Enabled = false;
                     btnEdit.Enabled = false;
 
-
+                   
 
                     sqlCon.Close();
                     dataGridView1.DataSource = null;
 
                     FillGridView();
+
                 }
                 catch (Exception ex)
                 {

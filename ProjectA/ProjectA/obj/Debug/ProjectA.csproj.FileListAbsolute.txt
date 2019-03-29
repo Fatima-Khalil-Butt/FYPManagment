@@ -160,9 +160,9 @@ C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\bin\Debug\ru\Microsoft.Report
 C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\bin\Debug\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
 C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\bin\Debug\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
 C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.csprojAssemblyReference.cache
-C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.EvaluationReport.resources
-C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.StudentReport.resources
 C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\bin\Debug\EntityFramework.dll
 C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\bin\Debug\EntityFramework.xml
 C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.StudentEvaluationReport.resources
+C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.StudentProjectReport.resources

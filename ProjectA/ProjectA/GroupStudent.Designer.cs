@@ -128,7 +128,7 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(671, 21);
+            this.button1.Location = new System.Drawing.Point(698, 20);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(168, 50);
             this.button1.TabIndex = 66;

@@ -65,13 +65,14 @@ namespace ProjectA
                         
                         MessageBox.Show("Data has been Added");
                         Clear();
-                       
+                        
 
 
                     }
                     sqlCon.Close();
                     dataGridView1.DataSource = null;
                     FillGridView();
+
                 }
                 catch (Exception ex)
                 {
@@ -218,6 +219,7 @@ namespace ProjectA
                     sqlCon.Close();
                     dataGridView1.DataSource = null;
                     FillGridView();
+
                 }
                 catch (Exception ex)
                 {
@@ -273,11 +275,12 @@ namespace ProjectA
                     btnEdit.Enabled = false;
                     btnAdd.Enabled = true;
 
-                   
+                    
                     sqlCon.Close();
                     dataGridView1.DataSource = null;
 
                     FillGridView();
+
                 }
                 catch (Exception ex)
                 {

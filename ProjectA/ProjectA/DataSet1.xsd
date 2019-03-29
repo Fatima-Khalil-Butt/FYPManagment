@@ -7,23 +7,28 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ProjectAConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProjectAConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ProjectA.Properties.Settings.GlobalReference.Default.ProjectAConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View1TableAdapter" GeneratorDataComponentClassName="View1TableAdapter" Name="View1" UserDataComponentName="View1TableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="StudentprojectTableAdapter" GeneratorDataComponentClassName="StudentprojectTableAdapter" Name="Studentproject" UserDataComponentName="StudentprojectTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ProjectAConnectionString (Settings)" DbObjectName="ProjectA.dbo.View1" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ProjectAConnectionString (Settings)" DbObjectName="ProjectA.dbo.Studentproject" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Id, Title, AdvisorId, AdvisorRole, StudentId FROM dbo.View1</CommandText>
+                    <CommandText>SELECT StudentID, StudentRegistrationNo, GroupStatus, GroupId, ProjectId, ProjectTitle, AdvisorID, AdvisorRoleID, Advisor, AdvisorRole FROM dbo.Studentproject</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="Id" DataSetColumn="Id" />
-              <Mapping SourceColumn="Title" DataSetColumn="Title" />
-              <Mapping SourceColumn="AdvisorId" DataSetColumn="AdvisorId" />
+              <Mapping SourceColumn="StudentID" DataSetColumn="StudentID" />
+              <Mapping SourceColumn="StudentRegistrationNo" DataSetColumn="StudentRegistrationNo" />
+              <Mapping SourceColumn="GroupStatus" DataSetColumn="GroupStatus" />
+              <Mapping SourceColumn="GroupId" DataSetColumn="GroupId" />
+              <Mapping SourceColumn="ProjectId" DataSetColumn="ProjectId" />
+              <Mapping SourceColumn="ProjectTitle" DataSetColumn="ProjectTitle" />
+              <Mapping SourceColumn="AdvisorID" DataSetColumn="AdvisorID" />
+              <Mapping SourceColumn="AdvisorRoleID" DataSetColumn="AdvisorRoleID" />
+              <Mapping SourceColumn="Advisor" DataSetColumn="Advisor" />
               <Mapping SourceColumn="AdvisorRole" DataSetColumn="AdvisorRole" />
-              <Mapping SourceColumn="StudentId" DataSetColumn="StudentId" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -35,20 +40,49 @@
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="View1" msprop:Generator_TableClassName="View1DataTable" msprop:Generator_TableVarName="tableView1" msprop:Generator_TablePropName="View1" msprop:Generator_RowDeletingName="View1RowDeleting" msprop:Generator_RowChangingName="View1RowChanging" msprop:Generator_RowEvHandlerName="View1RowChangeEventHandler" msprop:Generator_RowDeletedName="View1RowDeleted" msprop:Generator_UserTableName="View1" msprop:Generator_RowChangedName="View1RowChanged" msprop:Generator_RowEvArgName="View1RowChangeEvent" msprop:Generator_RowClassName="View1Row">
+        <xs:element name="Studentproject" msprop:Generator_TableClassName="StudentprojectDataTable" msprop:Generator_TableVarName="tableStudentproject" msprop:Generator_TablePropName="Studentproject" msprop:Generator_RowDeletingName="StudentprojectRowDeleting" msprop:Generator_RowChangingName="StudentprojectRowChanging" msprop:Generator_RowEvHandlerName="StudentprojectRowChangeEventHandler" msprop:Generator_RowDeletedName="StudentprojectRowDeleted" msprop:Generator_UserTableName="Studentproject" msprop:Generator_RowChangedName="StudentprojectRowChanged" msprop:Generator_RowEvArgName="StudentprojectRowChangeEvent" msprop:Generator_RowClassName="StudentprojectRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" minOccurs="0" />
-              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+              <xs:element name="StudentID" msprop:Generator_ColumnVarNameInTable="columnStudentID" msprop:Generator_ColumnPropNameInRow="StudentID" msprop:Generator_ColumnPropNameInTable="StudentIDColumn" msprop:Generator_UserColumnName="StudentID" type="xs:int" minOccurs="0" />
+              <xs:element name="StudentRegistrationNo" msprop:Generator_ColumnVarNameInTable="columnStudentRegistrationNo" msprop:Generator_ColumnPropNameInRow="StudentRegistrationNo" msprop:Generator_ColumnPropNameInTable="StudentRegistrationNoColumn" msprop:Generator_UserColumnName="StudentRegistrationNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GroupStatus" msprop:Generator_ColumnVarNameInTable="columnGroupStatus" msprop:Generator_ColumnPropNameInRow="GroupStatus" msprop:Generator_ColumnPropNameInTable="GroupStatusColumn" msprop:Generator_UserColumnName="GroupStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GroupId" msprop:Generator_ColumnVarNameInTable="columnGroupId" msprop:Generator_ColumnPropNameInRow="GroupId" msprop:Generator_ColumnPropNameInTable="GroupIdColumn" msprop:Generator_UserColumnName="GroupId" type="xs:int" minOccurs="0" />
+              <xs:element name="ProjectId" msprop:Generator_ColumnVarNameInTable="columnProjectId" msprop:Generator_ColumnPropNameInRow="ProjectId" msprop:Generator_ColumnPropNameInTable="ProjectIdColumn" msprop:Generator_UserColumnName="ProjectId" type="xs:int" minOccurs="0" />
+              <xs:element name="ProjectTitle" msprop:Generator_ColumnVarNameInTable="columnProjectTitle" msprop:Generator_ColumnPropNameInRow="ProjectTitle" msprop:Generator_ColumnPropNameInTable="ProjectTitleColumn" msprop:Generator_UserColumnName="ProjectTitle" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="AdvisorId" msprop:Generator_ColumnVarNameInTable="columnAdvisorId" msprop:Generator_ColumnPropNameInRow="AdvisorId" msprop:Generator_ColumnPropNameInTable="AdvisorIdColumn" msprop:Generator_UserColumnName="AdvisorId" type="xs:int" minOccurs="0" />
-              <xs:element name="AdvisorRole" msprop:Generator_ColumnVarNameInTable="columnAdvisorRole" msprop:Generator_ColumnPropNameInRow="AdvisorRole" msprop:Generator_ColumnPropNameInTable="AdvisorRoleColumn" msprop:Generator_UserColumnName="AdvisorRole" type="xs:int" minOccurs="0" />
-              <xs:element name="StudentId" msprop:Generator_ColumnVarNameInTable="columnStudentId" msprop:Generator_ColumnPropNameInRow="StudentId" msprop:Generator_ColumnPropNameInTable="StudentIdColumn" msprop:Generator_UserColumnName="StudentId" type="xs:int" />
+              <xs:element name="AdvisorID" msprop:Generator_ColumnVarNameInTable="columnAdvisorID" msprop:Generator_ColumnPropNameInRow="AdvisorID" msprop:Generator_ColumnPropNameInTable="AdvisorIDColumn" msprop:Generator_UserColumnName="AdvisorID" type="xs:int" minOccurs="0" />
+              <xs:element name="AdvisorRoleID" msprop:Generator_ColumnVarNameInTable="columnAdvisorRoleID" msprop:Generator_ColumnPropNameInRow="AdvisorRoleID" msprop:Generator_ColumnPropNameInTable="AdvisorRoleIDColumn" msprop:Generator_UserColumnName="AdvisorRoleID" type="xs:int" minOccurs="0" />
+              <xs:element name="Advisor" msprop:Generator_ColumnVarNameInTable="columnAdvisor" msprop:Generator_ColumnPropNameInRow="Advisor" msprop:Generator_ColumnPropNameInTable="AdvisorColumn" msprop:Generator_UserColumnName="Advisor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdvisorRole" msprop:Generator_ColumnVarNameInTable="columnAdvisorRole" msprop:Generator_ColumnPropNameInRow="AdvisorRole" msprop:Generator_ColumnPropNameInTable="AdvisorRoleColumn" msprop:Generator_UserColumnName="AdvisorRole" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

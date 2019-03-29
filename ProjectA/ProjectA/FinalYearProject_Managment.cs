@@ -93,14 +93,14 @@ namespace ProjectA
 
         private void button10_Click(object sender, EventArgs e)
         {
-            StudentReport sr = new StudentReport();
+            StudentProjectReport sr = new StudentProjectReport();
             this.Hide();
             sr.Show();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            EvaluationReport er = new EvaluationReport();
+            StudentEvaluationReport er = new StudentEvaluationReport();
             this.Hide();
             er.Show();
         }

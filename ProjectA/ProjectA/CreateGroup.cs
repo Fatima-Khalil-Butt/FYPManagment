@@ -79,11 +79,14 @@ namespace ProjectA
             int id = Convert.ToInt32(sqlCmd.ExecuteScalar());
 
             MessageBox.Show("Group has been Created And Group Id is:  " + id);
+
+          
+
             sqlCon.Close();
             dataGridView1.DataSource = null;
 
             FillGridView();
-         
+
 
 
         }
@@ -237,12 +240,14 @@ namespace ProjectA
                     btnEdit.Enabled = false;
                     button1.Enabled = true;
 
+                    
 
-               
                     sqlCon.Close();
+
                     dataGridView1.DataSource = null;
-                     FillGridView();
-                  }
+                    FillGridView();
+
+                }
                 
                 catch (Exception ex)
                 {
@@ -284,12 +289,13 @@ namespace ProjectA
                     btnDelete.Enabled = false;
                     btnEdit.Enabled = false;
                     button1.Enabled = true;
-
+                    
                     sqlCon.Close();
-
                     dataGridView1.DataSource = null;
 
                     FillGridView();
+
+
                 }
                 catch (Exception ex)
                 {

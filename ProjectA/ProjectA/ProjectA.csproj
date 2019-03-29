@@ -114,17 +114,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Evaluation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Evaluation.Designer.cs">
       <DependentUpon>Evaluation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EvaluationReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EvaluationReport.Designer.cs">
-      <DependentUpon>EvaluationReport.cs</DependentUpon>
     </Compile>
     <Compile Include="FinalYearProject_Managment.cs">
       <SubType>Form</SubType>
@@ -177,11 +176,17 @@
       <DependentUpon>RegisteredStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="StudentReport.cs">
+    <Compile Include="StudentEvaluationReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentReport.Designer.cs">
-      <DependentUpon>StudentReport.cs</DependentUpon>
+    <Compile Include="StudentEvaluationReport.Designer.cs">
+      <DependentUpon>StudentEvaluationReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentProjectReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentProjectReport.Designer.cs">
+      <DependentUpon>StudentProjectReport.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateGroupEvaluation.cs">
       <SubType>Form</SubType>
@@ -219,9 +224,6 @@
     <EmbeddedResource Include="Evaluation.resx">
       <DependentUpon>Evaluation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EvaluationReport.resx">
-      <DependentUpon>EvaluationReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FinalYearProject_Managment.resx">
       <DependentUpon>FinalYearProject_Managment.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,10 +257,14 @@
     <EmbeddedResource Include="RegisteredStudent.resx">
       <DependentUpon>RegisteredStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="StudentReport.resx">
-      <DependentUpon>StudentReport.cs</DependentUpon>
+    <EmbeddedResource Include="StudentEvaluation.rdlc" />
+    <EmbeddedResource Include="StudentEvaluationReport.resx">
+      <DependentUpon>StudentEvaluationReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StudentProjectReport.resx">
+      <DependentUpon>StudentProjectReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentProjectReporting.rdlc" />
     <EmbeddedResource Include="UpdateGroupEvaluation.resx">
       <DependentUpon>UpdateGroupEvaluation.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,6 +284,17 @@
     </None>
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
