@@ -119,11 +119,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Evaluation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Evaluation.Designer.cs">
       <DependentUpon>Evaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluationReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluationReport.Designer.cs">
+      <DependentUpon>EvaluationReport.cs</DependentUpon>
     </Compile>
     <Compile Include="FinalYearProject_Managment.cs">
       <SubType>Form</SubType>
@@ -162,6 +178,12 @@
     <Compile Include="Project.designer.cs">
       <DependentUpon>Project.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProjectReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectReport.Designer.cs">
+      <DependentUpon>ProjectReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
@@ -174,6 +196,12 @@
     </Compile>
     <Compile Include="RegisteredStudent.Designer.cs">
       <DependentUpon>RegisteredStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="StudentEvaluationReport.cs">
@@ -224,6 +252,10 @@
     <EmbeddedResource Include="Evaluation.resx">
       <DependentUpon>Evaluation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EvaluationReport.resx">
+      <DependentUpon>EvaluationReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvaluationsReport.rdlc" />
     <EmbeddedResource Include="FinalYearProject_Managment.resx">
       <DependentUpon>FinalYearProject_Managment.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +274,10 @@
     <EmbeddedResource Include="Project.resx">
       <DependentUpon>Project.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProjectReport.resx">
+      <DependentUpon>ProjectReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectsReport.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -256,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegisteredStudent.resx">
       <DependentUpon>RegisteredStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentEvaluation.rdlc" />
     <EmbeddedResource Include="StudentEvaluationReport.resx">
@@ -295,6 +334,28 @@
     </None>
     <None Include="DataSet2.xss">
       <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet3.xsc">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet3.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet3.xss">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet4.xsc">
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet4.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet4.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet4.xss">
+      <DependentUpon>DataSet4.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 
 namespace ProjectA
@@ -15,6 +16,7 @@ namespace ProjectA
     public partial class Register : Form
     {
         public static int gender;
+        public static string reg;
         SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-4NQFIN1\FATIMAKHALIL;Initial Catalog=ProjectA;Integrated Security=true;");
         public Register()
         {
@@ -98,11 +100,37 @@ namespace ProjectA
 
         }
 
+       bool ValidRegistrationNo(String reg)
+        {
+            string[] separatingChars = { "-" };
+            string[] words = reg.Split(separatingChars, System.StringSplitOptions.RemoveEmptyEntries);
+
+            if (words.Length == 3)
+            {
+
+                if (words[0].Length == 4 && words[0].All(char.IsDigit))
+                {
+                    if (words[1].Length >=2 && words[1].Length<=10&& words[1].All(char.IsLetter))
+                    {
+                        if (words[2].Length >= 1 && words[2].Length <= 10 && words[2].All(char.IsDigit))
+                        {
+                            return true;
+                        }
+                    }
+                }
+
+            }
+
+            return false;
+
+        }
         private void btn_Register_Click(object sender, EventArgs e)
         {
             bool found;
             string et= txt_Email.Text;
             string ct = txt_Contact.Text;
+            reg = txt_RegisterationNo.Text;
+            bool format = ValidRegistrationNo(reg);
             if (sqlCon.State == ConnectionState.Closed)
 
                 try
@@ -125,6 +153,10 @@ namespace ProjectA
                     else if (count > 0)
                     {
                         lblRegistrationNo.Text = "RegistrationNumber Already Exist!";
+                    }
+                    else if(format==false)
+                    {
+                        lblRegistrationNo.Text = "RegistrationNo Format is Invalid! Format Should be:2016-CS-370";
                     }
                     else
                     {
@@ -171,7 +203,7 @@ namespace ProjectA
                     }
                     if (txt_FirstName.Text != "" && txt_LastName.Text != ""  &&txt_Email.TextLength>11
                         && cmb_gender.Text != "" && txt_RegisterationNo.Text != "" && count == 0 
-                       && et.EndsWith("@gmail.com") == true &&txt_Contact.TextLength==14 && ct.StartsWith("+92-") == true)
+                       && et.EndsWith("@gmail.com") == true &&txt_Contact.TextLength==14 && ct.StartsWith("+92-") == true && format==true)
                     {
                         found = true;
                      
@@ -183,7 +215,7 @@ namespace ProjectA
                     }
                     if(found==true)
                     {
-                        SqlCommand sqlCmd = new SqlCommand("INSERT INTO Person(FirstName,LastName,Contact,Email,DateOfBirth,Gender) VALUES('" + txt_FirstName.Text + "','" + txt_LastName.Text + "','" + txt_Contact.Text + "','" + txt_Email.Text + "' ,'" + Convert.ToDateTime(dateTimePicker1.Value) + "',(SELECT Id From Lookup WHERE  Value = '" + cmb_gender.Text + "')) ", sqlCon);
+                        SqlCommand sqlCmd = new SqlCommand("INSERT INTO Person(FirstName,LastName,Contact,Email,DateOfBirth,Gender) VALUES('" + txt_FirstName.Text + "','" + txt_LastName.Text + "','" + txt_Contact.Text + "','" + txt_Email.Text + "' ,'" + Convert.ToDateTime(dateTimePicker1.Text) + "',(SELECT Id From Lookup WHERE  Value = '" + cmb_gender.Text + "')) ", sqlCon);
 
                         sqlCmd.ExecuteNonQuery();
 

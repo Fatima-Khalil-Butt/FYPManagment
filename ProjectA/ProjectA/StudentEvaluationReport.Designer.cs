@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSet2 = new ProjectA.DataSet2();
             this.StudentevaluationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSet2 = new ProjectA.DataSet2();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.StudentevaluationTableAdapter = new ProjectA.DataSet2TableAdapters.StudentevaluationTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StudentevaluationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // StudentevaluationBindingSource
+            // 
+            this.StudentevaluationBindingSource.DataMember = "Studentevaluation";
+            this.StudentevaluationBindingSource.DataSource = this.DataSet2;
+            // 
+            // DataSet2
+            // 
+            this.DataSet2.DataSetName = "DataSet2";
+            this.DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -51,16 +61,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(1924, 1050);
             this.reportViewer1.TabIndex = 0;
             // 
-            // DataSet2
-            // 
-            this.DataSet2.DataSetName = "DataSet2";
-            this.DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // StudentevaluationBindingSource
-            // 
-            this.StudentevaluationBindingSource.DataMember = "Studentevaluation";
-            this.StudentevaluationBindingSource.DataSource = this.DataSet2;
-            // 
             // StudentevaluationTableAdapter
             // 
             this.StudentevaluationTableAdapter.ClearBeforeFill = true;
@@ -73,9 +73,11 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "StudentEvaluationReport";
             this.Text = "StudentEvaluationReport";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.StudentEvaluationReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StudentevaluationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }

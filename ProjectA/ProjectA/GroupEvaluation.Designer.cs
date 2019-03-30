@@ -439,6 +439,8 @@
             this.Controls.Add(this.panel13);
             this.Name = "GroupEvaluation";
             this.Text = "GroupEvaluation";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GroupEvaluation_Load);
             this.panel13.ResumeLayout(false);
             this.panel17.ResumeLayout(false);

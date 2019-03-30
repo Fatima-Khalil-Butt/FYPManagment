@@ -166,3 +166,6 @@ C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\bin\Debug\EntityFramework.xml
 C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.StudentEvaluationReport.resources
 C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.StudentProjectReport.resources
+C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.Reports.resources
+C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.EvaluationReport.resources
+C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.ProjectReport.resources

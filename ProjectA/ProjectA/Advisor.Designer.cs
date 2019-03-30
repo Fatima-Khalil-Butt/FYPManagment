@@ -351,6 +351,8 @@
             this.Controls.Add(this.panel13);
             this.Name = "Advisor";
             this.Text = "Advisor";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Advisor_Load);
             this.panel13.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

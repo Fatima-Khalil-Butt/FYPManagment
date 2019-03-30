@@ -18,6 +18,7 @@ namespace ProjectA
     {
         SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-4NQFIN1\FATIMAKHALIL;Initial Catalog=ProjectA;Integrated Security=true;");
         public static int rowNo;
+        public static string reg;
         public RegisteredStudent()
         {
             InitializeComponent();
@@ -216,12 +217,39 @@ namespace ProjectA
         {
 
         }
+        bool ValidRegistrationNo(String reg)
+        {
+            string[] separatingChars = { "-" };
+            string[] words = reg.Split(separatingChars, System.StringSplitOptions.RemoveEmptyEntries);
+
+            if (words.Length == 3)
+            {
+
+                if (words[0].Length == 4 && words[0].All(char.IsDigit))
+                {
+                    if (words[1].Length >= 2 && words[1].Length <= 10 && words[1].All(char.IsLetter))
+                    {
+                        if (words[2].Length >= 1 && words[2].Length <= 10 && words[2].All(char.IsDigit))
+                        {
+                            return true;
+                        }
+                    }
+                }
+
+            }
+
+            return false;
+
+        }
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
             bool found;
             string et = textBox5.Text;
             string ct = textBox4.Text;
+            reg = textBox6.Text;
+            bool format = ValidRegistrationNo(reg);
+            
             if (sqlCon.State == ConnectionState.Closed)
                 try
                 {
@@ -243,6 +271,10 @@ namespace ProjectA
                     else if (count > 0)
                     {
                         lblRegistrationNo.Text = "Already Exist!";
+                    }
+                    else if (format == false)
+                    {
+                        lblRegistrationNo.Text = "RegistrationNo Format is Invalid! Format Should be:2016-CS-370";
                     }
                     else
                     {
@@ -289,7 +321,7 @@ namespace ProjectA
                     }
                    
                     if (textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != ""&& et.EndsWith("@gmail.com") == true && textBox4.TextLength == 14&& ct.StartsWith("+92-") == true
-                       && textBox5.Text != "" && comboBox1.Text != "" && textBox6.Text != "" && count==0 && textBox5.TextLength > 11)
+                       && textBox5.Text != "" && comboBox1.Text != "" && textBox6.Text != "" && count==0 && textBox5.TextLength > 11 &&format==true)
                         {
                             found = true;
 
@@ -313,7 +345,7 @@ namespace ProjectA
                         sqlCmd2.Parameters.AddWithValue("@LastName", textBox3.Text);
                         sqlCmd2.Parameters.AddWithValue("@Contact", textBox4.Text);
                         sqlCmd2.Parameters.AddWithValue("@Email", textBox5.Text);
-                        sqlCmd2.Parameters.AddWithValue("@DateOfBirth", Convert.ToDateTime(dateTimePicker1.Value));
+                        sqlCmd2.Parameters.AddWithValue("@DateOfBirth", Convert.ToDateTime(dateTimePicker1.Text));
                         // sqlCmd1.Parameters.AddWithValue("@Gender", selectedRow.Cells[6].Value);
 
 

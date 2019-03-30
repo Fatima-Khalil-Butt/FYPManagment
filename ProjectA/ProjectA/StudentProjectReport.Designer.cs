@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSet1 = new ProjectA.DataSet1();
             this.StudentprojectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSet1 = new ProjectA.DataSet1();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.StudentprojectTableAdapter = new ProjectA.DataSet1TableAdapters.StudentprojectTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StudentprojectBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // StudentprojectBindingSource
+            // 
+            this.StudentprojectBindingSource.DataMember = "Studentproject";
+            this.StudentprojectBindingSource.DataSource = this.DataSet1;
+            // 
+            // DataSet1
+            // 
+            this.DataSet1.DataSetName = "DataSet1";
+            this.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -51,16 +61,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(1924, 1050);
             this.reportViewer1.TabIndex = 0;
             // 
-            // DataSet1
-            // 
-            this.DataSet1.DataSetName = "DataSet1";
-            this.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // StudentprojectBindingSource
-            // 
-            this.StudentprojectBindingSource.DataMember = "Studentproject";
-            this.StudentprojectBindingSource.DataSource = this.DataSet1;
-            // 
             // StudentprojectTableAdapter
             // 
             this.StudentprojectTableAdapter.ClearBeforeFill = true;
@@ -73,9 +73,11 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "StudentProjectReport";
             this.Text = "StudentProjectReport";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.StudentProjectReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StudentprojectBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }

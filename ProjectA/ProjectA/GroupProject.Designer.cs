@@ -32,17 +32,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -55,18 +44,29 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel13.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.panel29.SuspendLayout();
+            this.panel20.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel12.SuspendLayout();
-            this.panel19.SuspendLayout();
-            this.panel21.SuspendLayout();
-            this.panel29.SuspendLayout();
-            this.panel20.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel13
@@ -110,6 +110,128 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1924, 914);
             this.panel1.TabIndex = 11;
+            // 
+            // panel19
+            // 
+            this.panel19.AutoScrollMargin = new System.Drawing.Size(1148, 661);
+            this.panel19.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel19.Controls.Add(this.panel21);
+            this.panel19.Controls.Add(this.panel29);
+            this.panel19.Controls.Add(this.panel20);
+            this.panel19.Location = new System.Drawing.Point(400, 6);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(1439, 713);
+            this.panel19.TabIndex = 79;
+            this.panel19.Paint += new System.Windows.Forms.PaintEventHandler(this.panel19_Paint);
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel21.Controls.Add(this.dateTimePicker2);
+            this.panel21.Controls.Add(this.label12);
+            this.panel21.Location = new System.Drawing.Point(294, 340);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(741, 104);
+            this.panel21.TabIndex = 85;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(268, 32);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(297, 26);
+            this.dateTimePicker2.TabIndex = 69;
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(31, 30);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(175, 32);
+            this.label12.TabIndex = 68;
+            this.label12.Text = "AssignmentDate";
+            // 
+            // panel29
+            // 
+            this.panel29.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel29.Controls.Add(this.label14);
+            this.panel29.Controls.Add(this.label13);
+            this.panel29.Controls.Add(this.comboBox3);
+            this.panel29.Location = new System.Drawing.Point(294, 206);
+            this.panel29.Name = "panel29";
+            this.panel29.Size = new System.Drawing.Size(741, 104);
+            this.panel29.TabIndex = 74;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(585, 54);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(15, 20);
+            this.label14.TabIndex = 83;
+            this.label14.Text = "*";
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(33, 10);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(364, 32);
+            this.label13.TabIndex = 82;
+            this.label13.Text = "Select ProjectId From List:";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(32, 54);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(547, 28);
+            this.comboBox3.TabIndex = 81;
+            this.comboBox3.SelectedValueChanged += new System.EventHandler(this.comboBox3_SelectedValueChanged);
+            this.comboBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox3_KeyPress);
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel20.Controls.Add(this.comboBox1);
+            this.panel20.Controls.Add(this.label7);
+            this.panel20.Controls.Add(this.label8);
+            this.panel20.Location = new System.Drawing.Point(294, 80);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(741, 104);
+            this.panel20.TabIndex = 73;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(38, 60);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(541, 28);
+            this.comboBox1.TabIndex = 82;
+            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
+            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(585, 63);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(15, 20);
+            this.label7.TabIndex = 81;
+            this.label7.Text = "*";
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(33, 17);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(309, 32);
+            this.label8.TabIndex = 80;
+            this.label8.Text = "Select Group From List:";
             // 
             // panel6
             // 
@@ -241,128 +363,6 @@
             this.linkLabel1.Text = "Home";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // panel19
-            // 
-            this.panel19.AutoScrollMargin = new System.Drawing.Size(1148, 661);
-            this.panel19.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel19.Controls.Add(this.panel21);
-            this.panel19.Controls.Add(this.panel29);
-            this.panel19.Controls.Add(this.panel20);
-            this.panel19.Location = new System.Drawing.Point(400, 6);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(1439, 713);
-            this.panel19.TabIndex = 79;
-            this.panel19.Paint += new System.Windows.Forms.PaintEventHandler(this.panel19_Paint);
-            // 
-            // panel21
-            // 
-            this.panel21.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel21.Controls.Add(this.dateTimePicker2);
-            this.panel21.Controls.Add(this.label12);
-            this.panel21.Location = new System.Drawing.Point(294, 340);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(741, 104);
-            this.panel21.TabIndex = 85;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(268, 32);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(297, 26);
-            this.dateTimePicker2.TabIndex = 69;
-            // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(31, 30);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(175, 32);
-            this.label12.TabIndex = 68;
-            this.label12.Text = "AssignmentDate";
-            // 
-            // panel29
-            // 
-            this.panel29.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel29.Controls.Add(this.label14);
-            this.panel29.Controls.Add(this.label13);
-            this.panel29.Controls.Add(this.comboBox3);
-            this.panel29.Location = new System.Drawing.Point(294, 206);
-            this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(741, 104);
-            this.panel29.TabIndex = 74;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(585, 54);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(15, 20);
-            this.label14.TabIndex = 83;
-            this.label14.Text = "*";
-            // 
-            // label13
-            // 
-            this.label13.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(33, 10);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(364, 32);
-            this.label13.TabIndex = 82;
-            this.label13.Text = "Select ProjectId From List:";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(32, 54);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(547, 28);
-            this.comboBox3.TabIndex = 81;
-            this.comboBox3.SelectedValueChanged += new System.EventHandler(this.comboBox3_SelectedValueChanged);
-            this.comboBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox3_KeyPress);
-            // 
-            // panel20
-            // 
-            this.panel20.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel20.Controls.Add(this.comboBox1);
-            this.panel20.Controls.Add(this.label7);
-            this.panel20.Controls.Add(this.label8);
-            this.panel20.Location = new System.Drawing.Point(294, 80);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(741, 104);
-            this.panel20.TabIndex = 73;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(38, 60);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(541, 28);
-            this.comboBox1.TabIndex = 82;
-            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
-            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(585, 63);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(15, 20);
-            this.label7.TabIndex = 81;
-            this.label7.Text = "*";
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(33, 17);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(309, 32);
-            this.label8.TabIndex = 80;
-            this.label8.Text = "Select Group From List:";
-            // 
             // GroupProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -373,9 +373,17 @@
             this.Controls.Add(this.panel13);
             this.Name = "GroupProject";
             this.Text = "GroupProject";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GroupProject_Load);
             this.panel13.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel21.ResumeLayout(false);
+            this.panel29.ResumeLayout(false);
+            this.panel29.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
@@ -386,12 +394,6 @@
             this.panel9.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            this.panel19.ResumeLayout(false);
-            this.panel21.ResumeLayout(false);
-            this.panel29.ResumeLayout(false);
-            this.panel29.PerformLayout();
-            this.panel20.ResumeLayout(false);
-            this.panel20.PerformLayout();
             this.ResumeLayout(false);
 
         }

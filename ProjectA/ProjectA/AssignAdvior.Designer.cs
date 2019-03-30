@@ -434,6 +434,8 @@
             this.Controls.Add(this.panel15);
             this.Name = "AssignAdvior";
             this.Text = "AssignAdvior";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AssignAdvior_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AssignAdvior_KeyDown);
             this.panel3.ResumeLayout(false);

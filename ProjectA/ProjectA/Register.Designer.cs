@@ -572,6 +572,8 @@
             this.Controls.Add(this.panel13);
             this.Name = "Register";
             this.Text = "Register";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Register_Load);
             this.panel13.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

@@ -48,9 +48,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel29 = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel20 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
@@ -62,8 +64,6 @@
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.panel28 = new System.Windows.Forms.Panel();
             this.linkLabel8 = new System.Windows.Forms.LinkLabel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel13.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -290,6 +290,14 @@
             this.panel29.Size = new System.Drawing.Size(696, 104);
             this.panel29.TabIndex = 74;
             // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBox3.Location = new System.Drawing.Point(38, 51);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(541, 26);
+            this.textBox3.TabIndex = 84;
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -319,6 +327,14 @@
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(696, 104);
             this.panel20.TabIndex = 73;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBox2.Location = new System.Drawing.Point(38, 57);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(541, 26);
+            this.textBox2.TabIndex = 82;
             // 
             // label7
             // 
@@ -448,22 +464,6 @@
             this.linkLabel8.Text = "Home";
             this.linkLabel8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox2.Location = new System.Drawing.Point(38, 57);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(541, 26);
-            this.textBox2.TabIndex = 82;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox3.Location = new System.Drawing.Point(38, 51);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(541, 26);
-            this.textBox3.TabIndex = 84;
-            // 
             // UpdateGroupEvaluation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -474,6 +474,8 @@
             this.Controls.Add(this.panel13);
             this.Name = "UpdateGroupEvaluation";
             this.Text = "UpdateGroupEvaluation";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.UpdateGroupEvaluation_Load);
             this.panel13.ResumeLayout(false);
             this.panel17.ResumeLayout(false);

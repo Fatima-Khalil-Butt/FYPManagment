@@ -201,7 +201,7 @@ namespace ProjectA
                         int id2 = Convert.ToInt32(sqlCmd2.ExecuteScalar());
                         string query1 = "UPDATE  ProjectAdvisor SET AdvisorId='"+id+"',ProjectId='"+ id2+"',AdvisorRole='"+ id1+"',AssignmentDate=@AssignmentDate WHERE ProjectId='"+ id2 +"' AND AdvisorId='"+ id+"'";
                         SqlCommand sqlCmd6 = new SqlCommand(query1, sqlCon);
-                        sqlCmd6.Parameters.AddWithValue("@AssignmentDate", Convert.ToDateTime(dateTimePicker1.Value));
+                        sqlCmd6.Parameters.AddWithValue("@AssignmentDate", Convert.ToDateTime(dateTimePicker1.Text));
                        
 
 

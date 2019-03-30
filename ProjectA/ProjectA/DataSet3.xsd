@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet3" targetNamespace="http://tempuri.org/DataSet3.xsd" xmlns:mstns="http://tempuri.org/DataSet3.xsd" xmlns="http://tempuri.org/DataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ProjectAConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProjectAConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ProjectA.Properties.Settings.GlobalReference.Default.ProjectAConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProjectReportTableAdapter" GeneratorDataComponentClassName="ProjectReportTableAdapter" Name="ProjectReport" UserDataComponentName="ProjectReportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProjectAConnectionString (Settings)" DbObjectName="ProjectA.dbo.ProjectReport" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT StudentID, StudentRegistrationNo, GroupStatus, GroupId, ProjectId, ProjectTitle, AdvisorID, AdvisorRoleID, Advisor, AdvisorRole FROM dbo.ProjectReport</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="StudentID" DataSetColumn="StudentID" />
+              <Mapping SourceColumn="StudentRegistrationNo" DataSetColumn="StudentRegistrationNo" />
+              <Mapping SourceColumn="GroupStatus" DataSetColumn="GroupStatus" />
+              <Mapping SourceColumn="GroupId" DataSetColumn="GroupId" />
+              <Mapping SourceColumn="ProjectId" DataSetColumn="ProjectId" />
+              <Mapping SourceColumn="ProjectTitle" DataSetColumn="ProjectTitle" />
+              <Mapping SourceColumn="AdvisorID" DataSetColumn="AdvisorID" />
+              <Mapping SourceColumn="AdvisorRoleID" DataSetColumn="AdvisorRoleID" />
+              <Mapping SourceColumn="Advisor" DataSetColumn="Advisor" />
+              <Mapping SourceColumn="AdvisorRole" DataSetColumn="AdvisorRole" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet3" msprop:Generator_UserDSName="DataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ProjectReport" msprop:Generator_TableClassName="ProjectReportDataTable" msprop:Generator_TableVarName="tableProjectReport" msprop:Generator_TablePropName="ProjectReport" msprop:Generator_RowDeletingName="ProjectReportRowDeleting" msprop:Generator_RowChangingName="ProjectReportRowChanging" msprop:Generator_RowEvHandlerName="ProjectReportRowChangeEventHandler" msprop:Generator_RowDeletedName="ProjectReportRowDeleted" msprop:Generator_UserTableName="ProjectReport" msprop:Generator_RowChangedName="ProjectReportRowChanged" msprop:Generator_RowEvArgName="ProjectReportRowChangeEvent" msprop:Generator_RowClassName="ProjectReportRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StudentID" msprop:Generator_ColumnVarNameInTable="columnStudentID" msprop:Generator_ColumnPropNameInRow="StudentID" msprop:Generator_ColumnPropNameInTable="StudentIDColumn" msprop:Generator_UserColumnName="StudentID" type="xs:int" minOccurs="0" />
+              <xs:element name="StudentRegistrationNo" msprop:Generator_ColumnVarNameInTable="columnStudentRegistrationNo" msprop:Generator_ColumnPropNameInRow="StudentRegistrationNo" msprop:Generator_ColumnPropNameInTable="StudentRegistrationNoColumn" msprop:Generator_UserColumnName="StudentRegistrationNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GroupStatus" msprop:Generator_ColumnVarNameInTable="columnGroupStatus" msprop:Generator_ColumnPropNameInRow="GroupStatus" msprop:Generator_ColumnPropNameInTable="GroupStatusColumn" msprop:Generator_UserColumnName="GroupStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GroupId" msprop:Generator_ColumnVarNameInTable="columnGroupId" msprop:Generator_ColumnPropNameInRow="GroupId" msprop:Generator_ColumnPropNameInTable="GroupIdColumn" msprop:Generator_UserColumnName="GroupId" type="xs:int" minOccurs="0" />
+              <xs:element name="ProjectId" msprop:Generator_ColumnVarNameInTable="columnProjectId" msprop:Generator_ColumnPropNameInRow="ProjectId" msprop:Generator_ColumnPropNameInTable="ProjectIdColumn" msprop:Generator_UserColumnName="ProjectId" type="xs:int" />
+              <xs:element name="ProjectTitle" msprop:Generator_ColumnVarNameInTable="columnProjectTitle" msprop:Generator_ColumnPropNameInRow="ProjectTitle" msprop:Generator_ColumnPropNameInTable="ProjectTitleColumn" msprop:Generator_UserColumnName="ProjectTitle">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdvisorID" msprop:Generator_ColumnVarNameInTable="columnAdvisorID" msprop:Generator_ColumnPropNameInRow="AdvisorID" msprop:Generator_ColumnPropNameInTable="AdvisorIDColumn" msprop:Generator_UserColumnName="AdvisorID" type="xs:int" />
+              <xs:element name="AdvisorRoleID" msprop:Generator_ColumnVarNameInTable="columnAdvisorRoleID" msprop:Generator_ColumnPropNameInRow="AdvisorRoleID" msprop:Generator_ColumnPropNameInTable="AdvisorRoleIDColumn" msprop:Generator_UserColumnName="AdvisorRoleID" type="xs:int" />
+              <xs:element name="Advisor" msprop:Generator_ColumnVarNameInTable="columnAdvisor" msprop:Generator_ColumnPropNameInRow="Advisor" msprop:Generator_ColumnPropNameInTable="AdvisorColumn" msprop:Generator_UserColumnName="Advisor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdvisorRole" msprop:Generator_ColumnVarNameInTable="columnAdvisorRole" msprop:Generator_ColumnPropNameInRow="AdvisorRole" msprop:Generator_ColumnPropNameInTable="AdvisorRoleColumn" msprop:Generator_UserColumnName="AdvisorRole" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

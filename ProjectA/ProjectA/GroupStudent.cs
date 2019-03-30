@@ -213,11 +213,11 @@ namespace ProjectA
                             int id3 = Convert.ToInt32(sqlCmd3.ExecuteScalar());
 
 
-                            SqlCommand sqlCmd5 = new SqlCommand("INSERT INTO GroupStudent(GroupId,StudentId,Status,AssignmentDate) VALUES('" + Convert.ToInt32(comboBox2.Text) + "','" + id1 + "','" + id4 + "','" + Convert.ToDateTime(dateTimePicker1.Value) + "')", sqlCon);
+                            SqlCommand sqlCmd5 = new SqlCommand("INSERT INTO GroupStudent(GroupId,StudentId,Status,AssignmentDate) VALUES('" + Convert.ToInt32(comboBox2.Text) + "','" + id1 + "','" + id4 + "','" + Convert.ToDateTime(dateTimePicker1.Text) + "')", sqlCon);
                             sqlCmd5.ExecuteNonQuery();
-                            SqlCommand sqlCmd6 = new SqlCommand("INSERT INTO GroupStudent(GroupId,StudentId,Status,AssignmentDate) VALUES('" + Convert.ToInt32(comboBox2.Text) + "','" + id2 + "','" + id4 + "','" + Convert.ToDateTime(dateTimePicker1.Value) + "')", sqlCon);
+                            SqlCommand sqlCmd6 = new SqlCommand("INSERT INTO GroupStudent(GroupId,StudentId,Status,AssignmentDate) VALUES('" + Convert.ToInt32(comboBox2.Text) + "','" + id2 + "','" + id4 + "','" + Convert.ToDateTime(dateTimePicker1.Text) + "')", sqlCon);
                             sqlCmd6.ExecuteNonQuery();
-                            SqlCommand sqlCmd7 = new SqlCommand("INSERT INTO GroupStudent(GroupId,StudentId,Status,AssignmentDate) VALUES('" + Convert.ToInt32(comboBox2.Text) + "','" + id3 + "','" + id4 + "','" + Convert.ToDateTime(dateTimePicker1.Value) + "')", sqlCon);
+                            SqlCommand sqlCmd7 = new SqlCommand("INSERT INTO GroupStudent(GroupId,StudentId,Status,AssignmentDate) VALUES('" + Convert.ToInt32(comboBox2.Text) + "','" + id3 + "','" + id4 + "','" + Convert.ToDateTime(dateTimePicker1.Text) + "')", sqlCon);
                             sqlCmd7.ExecuteNonQuery();
                             MessageBox.Show("  " + count + " Students  has been added to this Group");
                             Remove();
@@ -233,9 +233,9 @@ namespace ProjectA
                             int id9 = Convert.ToInt32(sqlCmd9.ExecuteScalar());
 
 
-                            SqlCommand sqlCmd10 = new SqlCommand("INSERT INTO GroupStudent(GroupId,StudentId,Status,AssignmentDate) VALUES('" + Convert.ToInt32(comboBox2.Text) + "','" + id8 + "','" + id4 + "','" + Convert.ToDateTime(dateTimePicker1.Value) + "')", sqlCon);
+                            SqlCommand sqlCmd10 = new SqlCommand("INSERT INTO GroupStudent(GroupId,StudentId,Status,AssignmentDate) VALUES('" + Convert.ToInt32(comboBox2.Text) + "','" + id8 + "','" + id4 + "','" + Convert.ToDateTime(dateTimePicker1.Text) + "')", sqlCon);
                             sqlCmd10.ExecuteNonQuery();
-                            SqlCommand sqlCmd11 = new SqlCommand("INSERT INTO GroupStudent(GroupId,StudentId,Status,AssignmentDate) VALUES('" + Convert.ToInt32(comboBox2.Text) + "','" + id9 + "','" + id4 + "','" + Convert.ToDateTime(dateTimePicker1.Value) + "')", sqlCon);
+                            SqlCommand sqlCmd11 = new SqlCommand("INSERT INTO GroupStudent(GroupId,StudentId,Status,AssignmentDate) VALUES('" + Convert.ToInt32(comboBox2.Text) + "','" + id9 + "','" + id4 + "','" + Convert.ToDateTime(dateTimePicker1.Text) + "')", sqlCon);
                             sqlCmd11.ExecuteNonQuery();
                             MessageBox.Show(" " + count + " Students has been added to this Group");
                             Remove();
@@ -249,7 +249,7 @@ namespace ProjectA
                             int id12 = Convert.ToInt32(sqlCmd12.ExecuteScalar());
 
 
-                            SqlCommand sqlCmd13 = new SqlCommand("INSERT INTO GroupStudent(GroupId,StudentId,Status,AssignmentDate) VALUES('" + Convert.ToInt32(comboBox2.Text) + "','" + id12 + "','" + id4 + "','" + Convert.ToDateTime(dateTimePicker1.Value) + "')", sqlCon);
+                            SqlCommand sqlCmd13 = new SqlCommand("INSERT INTO GroupStudent(GroupId,StudentId,Status,AssignmentDate) VALUES('" + Convert.ToInt32(comboBox2.Text) + "','" + id12 + "','" + id4 + "','" + Convert.ToDateTime(dateTimePicker1.Text) + "')", sqlCon);
                             sqlCmd13.ExecuteNonQuery();
                             MessageBox.Show(" " + count + " Students  has been added to this Group");
                             Remove();

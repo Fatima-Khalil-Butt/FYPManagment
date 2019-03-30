@@ -120,7 +120,7 @@
             this.panel15.Controls.Add(this.dataGridView1);
             this.panel15.Location = new System.Drawing.Point(343, 675);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(1569, 236);
+            this.panel15.Size = new System.Drawing.Size(1569, 227);
             this.panel15.TabIndex = 76;
             // 
             // dataGridView1
@@ -139,11 +139,11 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 17);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1563, 218);
+            this.dataGridView1.Size = new System.Drawing.Size(1563, 196);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -396,6 +396,8 @@
             this.Controls.Add(this.panel13);
             this.Name = "AvailableAdvisors";
             this.Text = "AvailableAdvisors";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AvailableAdvisors_Load);
             this.panel13.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

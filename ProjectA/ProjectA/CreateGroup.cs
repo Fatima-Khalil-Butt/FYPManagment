@@ -72,7 +72,7 @@ namespace ProjectA
             sqlCon.Open();
             
             
-            SqlCommand sqlCmdd = new SqlCommand("INSERT INTO [Group](Created_On) VALUES('" + Convert.ToDateTime(dateTimePicker1.Value) + "')", sqlCon);
+            SqlCommand sqlCmdd = new SqlCommand("INSERT INTO [Group](Created_On) VALUES('" + Convert.ToDateTime(dateTimePicker1.Text) + "')", sqlCon);
             sqlCmdd.ExecuteNonQuery();
 
             SqlCommand sqlCmd = new SqlCommand("SELECT IDENT_CURRENT('Group') ", sqlCon);

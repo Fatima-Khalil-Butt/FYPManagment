@@ -48,7 +48,7 @@ namespace ProjectA
         }
         void FillComboBox2()
         {
-            using (SqlDataAdapter s = new SqlDataAdapter("SELECT Id FROM [Group] ORDER BY Id", sqlCon))
+            using (SqlDataAdapter s = new SqlDataAdapter("SELECT  DISTINCT  Id FROM [Group] JOIN  GroupStudent ON  [Group].Id =GroupStudent.GroupId ORDER BY Id", sqlCon))
             {
 
                 DataTable dt1 = new DataTable();
@@ -163,7 +163,7 @@ namespace ProjectA
                     if (comboBox1.Text != "" && comboBox3.Text != "" &&  countId == 0)
                     {
 
-                        SqlCommand sqlCmd5 = new SqlCommand("INSERT INTO GroupProject(ProjectId,GroupId,AssignmentDate) VALUES('" + Convert.ToInt32(comboBox3.Text) + "','" + Convert.ToInt32(comboBox1.Text) + "','" + Convert.ToDateTime(dateTimePicker2.Value) + "')", sqlCon);
+                        SqlCommand sqlCmd5 = new SqlCommand("INSERT INTO GroupProject(ProjectId,GroupId,AssignmentDate) VALUES('" + Convert.ToInt32(comboBox3.Text) + "','" + Convert.ToInt32(comboBox1.Text) + "','" + Convert.ToDateTime(dateTimePicker2.Text) + "')", sqlCon);
 
                         sqlCmd5.ExecuteNonQuery();
                         MessageBox.Show("Project Added to Group");
