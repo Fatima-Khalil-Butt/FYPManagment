@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="ProjectAConnectionString (Settings)" DbObjectName="ProjectA.dbo.Studentproject" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT StudentID, StudentRegistrationNo, GroupStatus, GroupId, ProjectId, ProjectTitle, AdvisorID, AdvisorRoleID, Advisor, AdvisorRole FROM dbo.Studentproject</CommandText>
+                    <CommandText>SELECT StudentID, StudentRegistrationNo, GroupStatus, GroupId, GroupAssignmentDate, ProjectId, ProjectTitle, ProjectAssignmentDate, AdvisorID, AdvisorRoleID, Advisor, AdvisorRole, AdvisorAssignmentDate FROM dbo.Studentproject</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -23,12 +23,15 @@
               <Mapping SourceColumn="StudentRegistrationNo" DataSetColumn="StudentRegistrationNo" />
               <Mapping SourceColumn="GroupStatus" DataSetColumn="GroupStatus" />
               <Mapping SourceColumn="GroupId" DataSetColumn="GroupId" />
+              <Mapping SourceColumn="GroupAssignmentDate" DataSetColumn="GroupAssignmentDate" />
               <Mapping SourceColumn="ProjectId" DataSetColumn="ProjectId" />
               <Mapping SourceColumn="ProjectTitle" DataSetColumn="ProjectTitle" />
+              <Mapping SourceColumn="ProjectAssignmentDate" DataSetColumn="ProjectAssignmentDate" />
               <Mapping SourceColumn="AdvisorID" DataSetColumn="AdvisorID" />
               <Mapping SourceColumn="AdvisorRoleID" DataSetColumn="AdvisorRoleID" />
               <Mapping SourceColumn="Advisor" DataSetColumn="Advisor" />
               <Mapping SourceColumn="AdvisorRole" DataSetColumn="AdvisorRole" />
+              <Mapping SourceColumn="AdvisorAssignmentDate" DataSetColumn="AdvisorAssignmentDate" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -59,6 +62,7 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="GroupId" msprop:Generator_ColumnVarNameInTable="columnGroupId" msprop:Generator_ColumnPropNameInRow="GroupId" msprop:Generator_ColumnPropNameInTable="GroupIdColumn" msprop:Generator_UserColumnName="GroupId" type="xs:int" minOccurs="0" />
+              <xs:element name="GroupAssignmentDate" msprop:Generator_ColumnVarNameInTable="columnGroupAssignmentDate" msprop:Generator_ColumnPropNameInRow="GroupAssignmentDate" msprop:Generator_ColumnPropNameInTable="GroupAssignmentDateColumn" msprop:Generator_UserColumnName="GroupAssignmentDate" type="xs:dateTime" minOccurs="0" />
               <xs:element name="ProjectId" msprop:Generator_ColumnVarNameInTable="columnProjectId" msprop:Generator_ColumnPropNameInRow="ProjectId" msprop:Generator_ColumnPropNameInTable="ProjectIdColumn" msprop:Generator_UserColumnName="ProjectId" type="xs:int" minOccurs="0" />
               <xs:element name="ProjectTitle" msprop:Generator_ColumnVarNameInTable="columnProjectTitle" msprop:Generator_ColumnPropNameInRow="ProjectTitle" msprop:Generator_ColumnPropNameInTable="ProjectTitleColumn" msprop:Generator_UserColumnName="ProjectTitle" minOccurs="0">
                 <xs:simpleType>
@@ -67,6 +71,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="ProjectAssignmentDate" msprop:Generator_ColumnVarNameInTable="columnProjectAssignmentDate" msprop:Generator_ColumnPropNameInRow="ProjectAssignmentDate" msprop:Generator_ColumnPropNameInTable="ProjectAssignmentDateColumn" msprop:Generator_UserColumnName="ProjectAssignmentDate" type="xs:dateTime" minOccurs="0" />
               <xs:element name="AdvisorID" msprop:Generator_ColumnVarNameInTable="columnAdvisorID" msprop:Generator_ColumnPropNameInRow="AdvisorID" msprop:Generator_ColumnPropNameInTable="AdvisorIDColumn" msprop:Generator_UserColumnName="AdvisorID" type="xs:int" minOccurs="0" />
               <xs:element name="AdvisorRoleID" msprop:Generator_ColumnVarNameInTable="columnAdvisorRoleID" msprop:Generator_ColumnPropNameInRow="AdvisorRoleID" msprop:Generator_ColumnPropNameInTable="AdvisorRoleIDColumn" msprop:Generator_UserColumnName="AdvisorRoleID" type="xs:int" minOccurs="0" />
               <xs:element name="Advisor" msprop:Generator_ColumnVarNameInTable="columnAdvisor" msprop:Generator_ColumnPropNameInRow="Advisor" msprop:Generator_ColumnPropNameInTable="AdvisorColumn" msprop:Generator_UserColumnName="Advisor" minOccurs="0">
@@ -83,6 +88,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="AdvisorAssignmentDate" msprop:Generator_ColumnVarNameInTable="columnAdvisorAssignmentDate" msprop:Generator_ColumnPropNameInRow="AdvisorAssignmentDate" msprop:Generator_ColumnPropNameInTable="AdvisorAssignmentDateColumn" msprop:Generator_UserColumnName="AdvisorAssignmentDate" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

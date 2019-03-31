@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="ProjectAConnectionString (Settings)" DbObjectName="ProjectA.dbo.EvaluationReport" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT StudentID, StudentRegistrationNo, GroupStatus, GroupId, ProjectId, ProjectTitle, AssignmentName, EvaluationID, TotalMarks, TotalWeightage, ObtainedMarks FROM dbo.EvaluationReport</CommandText>
+                    <CommandText>SELECT StudentID, StudentRegistrationNo, GroupStatus, GroupId, GroupAssignmentDate, ProjectId, ProjectTitle, ProjectAssignmentDate, AssignmentName, EvaluationID, TotalMarks, TotalWeightage, ObtainedMarks, EvaluatisonDate FROM dbo.EvaluationReport</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -23,13 +23,16 @@
               <Mapping SourceColumn="StudentRegistrationNo" DataSetColumn="StudentRegistrationNo" />
               <Mapping SourceColumn="GroupStatus" DataSetColumn="GroupStatus" />
               <Mapping SourceColumn="GroupId" DataSetColumn="GroupId" />
+              <Mapping SourceColumn="GroupAssignmentDate" DataSetColumn="GroupAssignmentDate" />
               <Mapping SourceColumn="ProjectId" DataSetColumn="ProjectId" />
               <Mapping SourceColumn="ProjectTitle" DataSetColumn="ProjectTitle" />
+              <Mapping SourceColumn="ProjectAssignmentDate" DataSetColumn="ProjectAssignmentDate" />
               <Mapping SourceColumn="AssignmentName" DataSetColumn="AssignmentName" />
               <Mapping SourceColumn="EvaluationID" DataSetColumn="EvaluationID" />
               <Mapping SourceColumn="TotalMarks" DataSetColumn="TotalMarks" />
               <Mapping SourceColumn="TotalWeightage" DataSetColumn="TotalWeightage" />
               <Mapping SourceColumn="ObtainedMarks" DataSetColumn="ObtainedMarks" />
+              <Mapping SourceColumn="EvaluatisonDate" DataSetColumn="EvaluatisonDate" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -44,8 +47,8 @@
         <xs:element name="EvaluationReport" msprop:Generator_TableClassName="EvaluationReportDataTable" msprop:Generator_TableVarName="tableEvaluationReport" msprop:Generator_TablePropName="EvaluationReport" msprop:Generator_RowDeletingName="EvaluationReportRowDeleting" msprop:Generator_RowChangingName="EvaluationReportRowChanging" msprop:Generator_RowEvHandlerName="EvaluationReportRowChangeEventHandler" msprop:Generator_RowDeletedName="EvaluationReportRowDeleted" msprop:Generator_UserTableName="EvaluationReport" msprop:Generator_RowChangedName="EvaluationReportRowChanged" msprop:Generator_RowEvArgName="EvaluationReportRowChangeEvent" msprop:Generator_RowClassName="EvaluationReportRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="StudentID" msprop:Generator_ColumnVarNameInTable="columnStudentID" msprop:Generator_ColumnPropNameInRow="StudentID" msprop:Generator_ColumnPropNameInTable="StudentIDColumn" msprop:Generator_UserColumnName="StudentID" type="xs:int" minOccurs="0" />
-              <xs:element name="StudentRegistrationNo" msprop:Generator_ColumnVarNameInTable="columnStudentRegistrationNo" msprop:Generator_ColumnPropNameInRow="StudentRegistrationNo" msprop:Generator_ColumnPropNameInTable="StudentRegistrationNoColumn" msprop:Generator_UserColumnName="StudentRegistrationNo" minOccurs="0">
+              <xs:element name="StudentID" msprop:Generator_ColumnVarNameInTable="columnStudentID" msprop:Generator_ColumnPropNameInRow="StudentID" msprop:Generator_ColumnPropNameInTable="StudentIDColumn" msprop:Generator_UserColumnName="StudentID" type="xs:int" />
+              <xs:element name="StudentRegistrationNo" msprop:Generator_ColumnVarNameInTable="columnStudentRegistrationNo" msprop:Generator_ColumnPropNameInRow="StudentRegistrationNo" msprop:Generator_ColumnPropNameInTable="StudentRegistrationNoColumn" msprop:Generator_UserColumnName="StudentRegistrationNo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
@@ -59,15 +62,17 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="GroupId" msprop:Generator_ColumnVarNameInTable="columnGroupId" msprop:Generator_ColumnPropNameInRow="GroupId" msprop:Generator_ColumnPropNameInTable="GroupIdColumn" msprop:Generator_UserColumnName="GroupId" type="xs:int" minOccurs="0" />
-              <xs:element name="ProjectId" msprop:Generator_ColumnVarNameInTable="columnProjectId" msprop:Generator_ColumnPropNameInRow="ProjectId" msprop:Generator_ColumnPropNameInTable="ProjectIdColumn" msprop:Generator_UserColumnName="ProjectId" type="xs:int" minOccurs="0" />
-              <xs:element name="ProjectTitle" msprop:Generator_ColumnVarNameInTable="columnProjectTitle" msprop:Generator_ColumnPropNameInRow="ProjectTitle" msprop:Generator_ColumnPropNameInTable="ProjectTitleColumn" msprop:Generator_UserColumnName="ProjectTitle" minOccurs="0">
+              <xs:element name="GroupId" msprop:Generator_ColumnVarNameInTable="columnGroupId" msprop:Generator_ColumnPropNameInRow="GroupId" msprop:Generator_ColumnPropNameInTable="GroupIdColumn" msprop:Generator_UserColumnName="GroupId" type="xs:int" />
+              <xs:element name="GroupAssignmentDate" msprop:Generator_ColumnVarNameInTable="columnGroupAssignmentDate" msprop:Generator_ColumnPropNameInRow="GroupAssignmentDate" msprop:Generator_ColumnPropNameInTable="GroupAssignmentDateColumn" msprop:Generator_UserColumnName="GroupAssignmentDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ProjectId" msprop:Generator_ColumnVarNameInTable="columnProjectId" msprop:Generator_ColumnPropNameInRow="ProjectId" msprop:Generator_ColumnPropNameInTable="ProjectIdColumn" msprop:Generator_UserColumnName="ProjectId" type="xs:int" />
+              <xs:element name="ProjectTitle" msprop:Generator_ColumnVarNameInTable="columnProjectTitle" msprop:Generator_ColumnPropNameInRow="ProjectTitle" msprop:Generator_ColumnPropNameInTable="ProjectTitleColumn" msprop:Generator_UserColumnName="ProjectTitle">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="ProjectAssignmentDate" msprop:Generator_ColumnVarNameInTable="columnProjectAssignmentDate" msprop:Generator_ColumnPropNameInRow="ProjectAssignmentDate" msprop:Generator_ColumnPropNameInTable="ProjectAssignmentDateColumn" msprop:Generator_UserColumnName="ProjectAssignmentDate" type="xs:dateTime" />
               <xs:element name="AssignmentName" msprop:Generator_ColumnVarNameInTable="columnAssignmentName" msprop:Generator_ColumnPropNameInRow="AssignmentName" msprop:Generator_ColumnPropNameInTable="AssignmentNameColumn" msprop:Generator_UserColumnName="AssignmentName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -75,10 +80,11 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="EvaluationID" msprop:Generator_ColumnVarNameInTable="columnEvaluationID" msprop:Generator_ColumnPropNameInRow="EvaluationID" msprop:Generator_ColumnPropNameInTable="EvaluationIDColumn" msprop:Generator_UserColumnName="EvaluationID" type="xs:int" minOccurs="0" />
+              <xs:element name="EvaluationID" msprop:Generator_ColumnVarNameInTable="columnEvaluationID" msprop:Generator_ColumnPropNameInRow="EvaluationID" msprop:Generator_ColumnPropNameInTable="EvaluationIDColumn" msprop:Generator_UserColumnName="EvaluationID" type="xs:int" />
               <xs:element name="TotalMarks" msprop:Generator_ColumnVarNameInTable="columnTotalMarks" msprop:Generator_ColumnPropNameInRow="TotalMarks" msprop:Generator_ColumnPropNameInTable="TotalMarksColumn" msprop:Generator_UserColumnName="TotalMarks" type="xs:int" minOccurs="0" />
               <xs:element name="TotalWeightage" msprop:Generator_ColumnVarNameInTable="columnTotalWeightage" msprop:Generator_ColumnPropNameInRow="TotalWeightage" msprop:Generator_ColumnPropNameInTable="TotalWeightageColumn" msprop:Generator_UserColumnName="TotalWeightage" type="xs:int" minOccurs="0" />
-              <xs:element name="ObtainedMarks" msprop:Generator_ColumnVarNameInTable="columnObtainedMarks" msprop:Generator_ColumnPropNameInRow="ObtainedMarks" msprop:Generator_ColumnPropNameInTable="ObtainedMarksColumn" msprop:Generator_UserColumnName="ObtainedMarks" type="xs:int" minOccurs="0" />
+              <xs:element name="ObtainedMarks" msprop:Generator_ColumnVarNameInTable="columnObtainedMarks" msprop:Generator_ColumnPropNameInRow="ObtainedMarks" msprop:Generator_ColumnPropNameInTable="ObtainedMarksColumn" msprop:Generator_UserColumnName="ObtainedMarks" type="xs:int" />
+              <xs:element name="EvaluatisonDate" msprop:Generator_ColumnVarNameInTable="columnEvaluatisonDate" msprop:Generator_ColumnPropNameInRow="EvaluatisonDate" msprop:Generator_ColumnPropNameInTable="EvaluatisonDateColumn" msprop:Generator_UserColumnName="EvaluatisonDate" type="xs:dateTime" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

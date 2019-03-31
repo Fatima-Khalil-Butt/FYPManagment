@@ -287,9 +287,13 @@ namespace ProjectA {
             
             private global::System.Data.DataColumn columnGroupId;
             
+            private global::System.Data.DataColumn columnGroupAssignmentDate;
+            
             private global::System.Data.DataColumn columnProjectId;
             
             private global::System.Data.DataColumn columnProjectTitle;
+            
+            private global::System.Data.DataColumn columnProjectAssignmentDate;
             
             private global::System.Data.DataColumn columnAdvisorID;
             
@@ -298,6 +302,8 @@ namespace ProjectA {
             private global::System.Data.DataColumn columnAdvisor;
             
             private global::System.Data.DataColumn columnAdvisorRole;
+            
+            private global::System.Data.DataColumn columnAdvisorAssignmentDate;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -366,6 +372,14 @@ namespace ProjectA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn GroupAssignmentDateColumn {
+                get {
+                    return this.columnGroupAssignmentDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn ProjectIdColumn {
                 get {
                     return this.columnProjectId;
@@ -377,6 +391,14 @@ namespace ProjectA {
             public global::System.Data.DataColumn ProjectTitleColumn {
                 get {
                     return this.columnProjectTitle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ProjectAssignmentDateColumn {
+                get {
+                    return this.columnProjectAssignmentDate;
                 }
             }
             
@@ -409,6 +431,14 @@ namespace ProjectA {
             public global::System.Data.DataColumn AdvisorRoleColumn {
                 get {
                     return this.columnAdvisorRole;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn AdvisorAssignmentDateColumn {
+                get {
+                    return this.columnAdvisorAssignmentDate;
                 }
             }
             
@@ -449,19 +479,22 @@ namespace ProjectA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public StudentprojectRow AddStudentprojectRow(int StudentID, string StudentRegistrationNo, string GroupStatus, int GroupId, int ProjectId, string ProjectTitle, int AdvisorID, int AdvisorRoleID, string Advisor, string AdvisorRole) {
+            public StudentprojectRow AddStudentprojectRow(int StudentID, string StudentRegistrationNo, string GroupStatus, int GroupId, System.DateTime GroupAssignmentDate, int ProjectId, string ProjectTitle, System.DateTime ProjectAssignmentDate, int AdvisorID, int AdvisorRoleID, string Advisor, string AdvisorRole, System.DateTime AdvisorAssignmentDate) {
                 StudentprojectRow rowStudentprojectRow = ((StudentprojectRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         StudentID,
                         StudentRegistrationNo,
                         GroupStatus,
                         GroupId,
+                        GroupAssignmentDate,
                         ProjectId,
                         ProjectTitle,
+                        ProjectAssignmentDate,
                         AdvisorID,
                         AdvisorRoleID,
                         Advisor,
-                        AdvisorRole};
+                        AdvisorRole,
+                        AdvisorAssignmentDate};
                 rowStudentprojectRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowStudentprojectRow);
                 return rowStudentprojectRow;
@@ -488,12 +521,15 @@ namespace ProjectA {
                 this.columnStudentRegistrationNo = base.Columns["StudentRegistrationNo"];
                 this.columnGroupStatus = base.Columns["GroupStatus"];
                 this.columnGroupId = base.Columns["GroupId"];
+                this.columnGroupAssignmentDate = base.Columns["GroupAssignmentDate"];
                 this.columnProjectId = base.Columns["ProjectId"];
                 this.columnProjectTitle = base.Columns["ProjectTitle"];
+                this.columnProjectAssignmentDate = base.Columns["ProjectAssignmentDate"];
                 this.columnAdvisorID = base.Columns["AdvisorID"];
                 this.columnAdvisorRoleID = base.Columns["AdvisorRoleID"];
                 this.columnAdvisor = base.Columns["Advisor"];
                 this.columnAdvisorRole = base.Columns["AdvisorRole"];
+                this.columnAdvisorAssignmentDate = base.Columns["AdvisorAssignmentDate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -507,10 +543,14 @@ namespace ProjectA {
                 base.Columns.Add(this.columnGroupStatus);
                 this.columnGroupId = new global::System.Data.DataColumn("GroupId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGroupId);
+                this.columnGroupAssignmentDate = new global::System.Data.DataColumn("GroupAssignmentDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGroupAssignmentDate);
                 this.columnProjectId = new global::System.Data.DataColumn("ProjectId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProjectId);
                 this.columnProjectTitle = new global::System.Data.DataColumn("ProjectTitle", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProjectTitle);
+                this.columnProjectAssignmentDate = new global::System.Data.DataColumn("ProjectAssignmentDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProjectAssignmentDate);
                 this.columnAdvisorID = new global::System.Data.DataColumn("AdvisorID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAdvisorID);
                 this.columnAdvisorRoleID = new global::System.Data.DataColumn("AdvisorRoleID", typeof(int), null, global::System.Data.MappingType.Element);
@@ -519,6 +559,8 @@ namespace ProjectA {
                 base.Columns.Add(this.columnAdvisor);
                 this.columnAdvisorRole = new global::System.Data.DataColumn("AdvisorRole", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAdvisorRole);
+                this.columnAdvisorAssignmentDate = new global::System.Data.DataColumn("AdvisorAssignmentDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAdvisorAssignmentDate);
                 this.columnStudentRegistrationNo.MaxLength = 20;
                 this.columnGroupStatus.MaxLength = 100;
                 this.columnProjectTitle.MaxLength = 50;
@@ -731,6 +773,22 @@ namespace ProjectA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime GroupAssignmentDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableStudentproject.GroupAssignmentDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GroupAssignmentDate\' in table \'Studentproject\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStudentproject.GroupAssignmentDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int ProjectId {
                 get {
                     try {
@@ -758,6 +816,23 @@ namespace ProjectA {
                 }
                 set {
                     this[this.tableStudentproject.ProjectTitleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime ProjectAssignmentDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableStudentproject.ProjectAssignmentDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProjectAssignmentDate\' in table \'Studentproject\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableStudentproject.ProjectAssignmentDateColumn] = value;
                 }
             }
             
@@ -827,6 +902,23 @@ namespace ProjectA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime AdvisorAssignmentDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableStudentproject.AdvisorAssignmentDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AdvisorAssignmentDate\' in table \'Studentproject\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableStudentproject.AdvisorAssignmentDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsStudentIDNull() {
                 return this.IsNull(this.tableStudentproject.StudentIDColumn);
             }
@@ -875,6 +967,18 @@ namespace ProjectA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsGroupAssignmentDateNull() {
+                return this.IsNull(this.tableStudentproject.GroupAssignmentDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetGroupAssignmentDateNull() {
+                this[this.tableStudentproject.GroupAssignmentDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsProjectIdNull() {
                 return this.IsNull(this.tableStudentproject.ProjectIdColumn);
             }
@@ -895,6 +999,18 @@ namespace ProjectA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetProjectTitleNull() {
                 this[this.tableStudentproject.ProjectTitleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsProjectAssignmentDateNull() {
+                return this.IsNull(this.tableStudentproject.ProjectAssignmentDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetProjectAssignmentDateNull() {
+                this[this.tableStudentproject.ProjectAssignmentDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -943,6 +1059,18 @@ namespace ProjectA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAdvisorRoleNull() {
                 this[this.tableStudentproject.AdvisorRoleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsAdvisorAssignmentDateNull() {
+                return this.IsNull(this.tableStudentproject.AdvisorAssignmentDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetAdvisorAssignmentDateNull() {
+                this[this.tableStudentproject.AdvisorAssignmentDateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1109,12 +1237,15 @@ namespace ProjectA.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("StudentRegistrationNo", "StudentRegistrationNo");
             tableMapping.ColumnMappings.Add("GroupStatus", "GroupStatus");
             tableMapping.ColumnMappings.Add("GroupId", "GroupId");
+            tableMapping.ColumnMappings.Add("GroupAssignmentDate", "GroupAssignmentDate");
             tableMapping.ColumnMappings.Add("ProjectId", "ProjectId");
             tableMapping.ColumnMappings.Add("ProjectTitle", "ProjectTitle");
+            tableMapping.ColumnMappings.Add("ProjectAssignmentDate", "ProjectAssignmentDate");
             tableMapping.ColumnMappings.Add("AdvisorID", "AdvisorID");
             tableMapping.ColumnMappings.Add("AdvisorRoleID", "AdvisorRoleID");
             tableMapping.ColumnMappings.Add("Advisor", "Advisor");
             tableMapping.ColumnMappings.Add("AdvisorRole", "AdvisorRole");
+            tableMapping.ColumnMappings.Add("AdvisorAssignmentDate", "AdvisorAssignmentDate");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1131,8 +1262,9 @@ namespace ProjectA.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT StudentID, StudentRegistrationNo, GroupStatus, GroupId, ProjectId, Project" +
-                "Title, AdvisorID, AdvisorRoleID, Advisor, AdvisorRole FROM dbo.Studentproject";
+            this._commandCollection[0].CommandText = "SELECT StudentID, StudentRegistrationNo, GroupStatus, GroupId, GroupAssignmentDat" +
+                "e, ProjectId, ProjectTitle, ProjectAssignmentDate, AdvisorID, AdvisorRoleID, Adv" +
+                "isor, AdvisorRole, AdvisorAssignmentDate FROM dbo.Studentproject";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

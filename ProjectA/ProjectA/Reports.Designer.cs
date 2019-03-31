@@ -43,14 +43,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
             this.panel13.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -59,10 +59,10 @@
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel13
@@ -88,11 +88,11 @@
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel15.Controls.Add(this.panel8);
             this.panel15.Controls.Add(this.panel11);
             this.panel15.Controls.Add(this.panel6);
             this.panel15.Controls.Add(this.panel3);
             this.panel15.Controls.Add(this.panel1);
-            this.panel15.Controls.Add(this.panel8);
             this.panel15.Controls.Add(this.panel5);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel15.Location = new System.Drawing.Point(0, 138);
@@ -187,7 +187,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(12, 296);
+            this.panel1.Location = new System.Drawing.Point(12, 169);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1909, 121);
             this.panel1.TabIndex = 87;
@@ -221,47 +221,6 @@
             this.button1.Text = "ProjectReport";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel8.Controls.Add(this.panel9);
-            this.panel8.Controls.Add(this.button11);
-            this.panel8.Location = new System.Drawing.Point(12, 169);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1909, 121);
-            this.panel8.TabIndex = 86;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.label4);
-            this.panel9.Location = new System.Drawing.Point(422, 36);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1439, 55);
-            this.panel9.TabIndex = 69;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1457, 42);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Create Report Of Marks sheet of all  projects that shows the marks in each evalua" +
-    "tion against each student and project";
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(47, 36);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(276, 55);
-            this.button11.TabIndex = 68;
-            this.button11.Text = "StudentEvaluationReport";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // panel5
             // 
@@ -304,6 +263,46 @@
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Controls.Add(this.button11);
+            this.panel8.Location = new System.Drawing.Point(12, 296);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1909, 121);
+            this.panel8.TabIndex = 91;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.label4);
+            this.panel9.Location = new System.Drawing.Point(422, 36);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1439, 55);
+            this.panel9.TabIndex = 69;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(1457, 42);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Create Report Of Marks sheet of all  projects that shows the marks in each evalua" +
+    "tion against each student and project";
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(47, 36);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(296, 55);
+            this.button11.TabIndex = 68;
+            this.button11.Text = "StudentEvaluationReport";
+            this.button11.UseVisualStyleBackColor = false;
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -324,10 +323,10 @@
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -349,13 +348,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button11;
     }
 }
