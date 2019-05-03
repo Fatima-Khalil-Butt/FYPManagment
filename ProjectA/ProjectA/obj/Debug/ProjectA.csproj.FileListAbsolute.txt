@@ -169,3 +169,5 @@ C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.StudentPro
 C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.Reports.resources
 C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.EvaluationReport.resources
 C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\ProjectA.ProjectReport.resources
+C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\RdlCompile.cache
+C:\Users\hp\Desktop\FYPManagment\ProjectA\ProjectA\obj\Debug\RdlCompile.compiled

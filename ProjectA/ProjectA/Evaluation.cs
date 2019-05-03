@@ -41,6 +41,10 @@ namespace ProjectA
                     {
                         lblName.Text = "Already exist!";
                     }
+                    else if(Convert.ToInt32(txtWeightage.Text)>100)
+                    {
+                        lblTotalWeight.Text = "TotalWeightage must be <= to 100%";
+                    }
                     else
                     {
                         if (txtName.Text == "")
@@ -57,7 +61,7 @@ namespace ProjectA
                         }
 
                     }
-                    if (txtmarks.Text != "" && txtmarks.Text != "" && txtWeightage.Text != "" && count==0)
+                    if (txtmarks.Text != "" && txtmarks.Text != "" && txtWeightage.Text != "" && count==0&& Convert.ToInt32(txtWeightage.Text) <=100)
                     {
                         SqlCommand sqlCmd1 = new SqlCommand("INSERT INTO Evaluation(Name,TotalMarks,TotalWeightage) VALUES('" + txtName.Text + "','" + Convert.ToInt32(txtmarks.Text) + "','" + Convert.ToInt32(txtWeightage.Text) + "')", sqlCon);
 
@@ -178,6 +182,10 @@ namespace ProjectA
                         lblName.Text = "Name Already Exist!";
 
                     }
+                    else if (Convert.ToInt32(txtWeightage.Text) > 100)
+                    {
+                        lblTotalWeight.Text = "TotalWeightage must be <= to 100%";
+                    }
                     else
                     {
                         if (txtName.Text == "")
@@ -194,7 +202,7 @@ namespace ProjectA
                         }
 
                     }
-                    if (txtName.Text != "" && txtmarks.Text != "" && txtWeightage.Text != "")
+                    if (txtName.Text != "" && txtmarks.Text != "" && txtWeightage.Text != "" && Convert.ToInt32(txtWeightage.Text) <= 100 &&count==0)
                     {
 
 

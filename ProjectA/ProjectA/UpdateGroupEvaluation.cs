@@ -194,7 +194,8 @@ namespace ProjectA
 
                     sqlCon.Open();
 
-
+                    SqlCommand sqlCmd16 = new SqlCommand("SELECT Evaluation.TotalMarks FROM Evaluation WHERE Id='" + Convert.ToInt32(textBox3.Text) + "'", sqlCon);
+                    int countId1 = Convert.ToInt32(sqlCmd16.ExecuteScalar());
 
                     if (textBox1.Text == "" && textBox3.Text == "" && textBox1.Text == "")
                     {
@@ -204,7 +205,10 @@ namespace ProjectA
                         label10.Text = "Marks Required!";
 
                     }
-
+                    else if (Convert.ToInt32(textBox1.Text) > (countId1))
+                    {
+                        MessageBox.Show("Marks Obtained are Greater than  total marks");
+                    }
                     else
                     {
                         if (textBox1.Text == "")
@@ -225,7 +229,7 @@ namespace ProjectA
                         }
 
                     }
-                    if (textBox2.Text != "" && textBox3.Text != "" && textBox1.Text != "")
+                    if (textBox2.Text != "" && textBox3.Text != "" && textBox1.Text != "" && Convert.ToInt32(textBox1.Text) < (countId1))
                     {
 
                         SqlCommand sqlCmd3 = new SqlCommand("UPDATE GroupEvaluation SET ObtainedMarks=@ObtainedMarks,EvaluationDate=@EvaluationDate WHERE GroupId=@GroupId AND EvaluationId=@EvaluationId", sqlCon);
@@ -298,6 +302,16 @@ namespace ProjectA
                 {
                     MessageBox.Show(ex.Message);
                 }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -146,8 +146,10 @@ namespace ProjectA
 
                  SqlCommand sqlCmd14 = new SqlCommand("SELECT COUNT(GroupId) FROM GroupEvaluation WHERE GroupId='" + Convert.ToInt32(comboBox1.Text) + "' AND EvaluationId='" + Convert.ToInt32(comboBox3.Text) + "'", sqlCon);
                  int countId = Convert.ToInt32(sqlCmd14.ExecuteScalar());
+                    SqlCommand sqlCmd16 = new SqlCommand("SELECT Evaluation.TotalMarks FROM Evaluation WHERE Id='" + Convert.ToInt32(comboBox3.Text) + "'", sqlCon);
+                    int countId1= Convert.ToInt32(sqlCmd16.ExecuteScalar());
 
-                    
+
                     if (comboBox1.Text == "" && comboBox3.Text == ""&&textBox1.Text=="")
                     {
                         
@@ -160,6 +162,10 @@ namespace ProjectA
                     else if(countId>0)
                     {
                         MessageBox.Show("Evaluation of this Group Already Exist");
+                    }
+                    else if(Convert.ToInt32(textBox1.Text)> (countId1))
+                    {
+                        MessageBox.Show("Marks Obtained are Greater than  total marks");
                     }
                     else
                     {
@@ -181,7 +187,7 @@ namespace ProjectA
                         }
 
                     }
-                    if (comboBox1.Text != "" && comboBox3.Text != "" && textBox1.Text!=""&& countId==0)
+                    if (comboBox1.Text != "" && comboBox3.Text != "" && textBox1.Text!=""&& countId==0 && Convert.ToInt32(textBox1.Text) <=(countId1))
                     {
 
                         SqlCommand sqlCmd5 = new SqlCommand("INSERT INTO GroupEvaluation(GroupId,EvaluationId,ObtainedMarks,EvaluationDate) VALUES('" + Convert.ToInt32(comboBox1.Text) + "','" + Convert.ToInt32(comboBox3.Text) + "','" + Convert.ToInt32(textBox1.Text) + "','" + Convert.ToDateTime(dateTimePicker2.Text) + "')", sqlCon);
